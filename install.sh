@@ -1,12 +1,7 @@
 #!/bin/sh
-cat << 'EOF'
-  _____           _        _ _       _   _             
- |_   _|         | |      | | |     | | (_)            
-   | |  _ __  ___| |_ __ _| | | __ _| |_ _  ___  _ __  
-   | | | '_ \/ __| __/ _` | | |/ _` | __| |/ _ \| '_ \ 
-  _| |_| | | \__ \ || (_| | | | (_| | |_| | (_) | | | |
- |_____|_| |_|___/\__\__,_|_|_|\__,_|\__|_|\___/|_| |_|
-EOF
+
+chmod +x ~/hypr/install/scripts/pretty-greeter-1.sh
+~/hypr/install/scripts/pretty-greeter-1.sh
 
 echo "yay and sddm are not installed. Installing..."
 sudo pacman -S --needed git base-devel
@@ -16,11 +11,15 @@ makepkg -si
 cd ..
 rm -rf yay
 
-# Prompt for installation type
-echo "What type of installation do you want?"
-echo "1) full installation (extra utilities)"
-echo "2) minimal installation"
-read -p "Enter the number of your choice: " choice
+# Installation Type ------------------------------------------------------------------------------------
+
+chmod +x ~/hypr/install/scripts/pretty-greeter-2.sh
+~/hypr/install/scripts/pretty-greeter-2.sh
+
+echo "Select installation type:"
+echo "1) Full installation"
+echo "2) Minimal installation"
+read -r choice
 
 case $choice in
   1)
@@ -37,44 +36,58 @@ case $choice in
     ;;
 esac
 
+# Theme Installation ------------------------------------------------------------------------------------
+
 echo "Installing Catppuccin Mocha theme..."
 mkdir ~/.themes
 unzip ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark.zip
 cp -r ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark ~/.themes/
 echo "Catppuccin Mocha theme has been installed successfully."
 
-# Prompt to install Open WebUI
+# Prompt to install Open WebUI ---------------------------------------------------------------------------
+
+chmod +x ~/hypr/install/scripts/pretty-greeter-3.sh
+~/hypr/install/scripts/pretty-greeter-3.sh
+
 echo "Would you like to install Open WebUI for running local LLMs?"
 printf "Enter your choice: (y/n): "
 read choice
 
-if [ "$choice" = "y" ]; then
+case $choice in
+  y|Y)
     echo "Installing Open WebUI..."
-    chmod +x config/install/scripts/open-webui.sh
-    ./config/install/scripts/open-webui.sh
-elif [ "$choice" = "n" ]; then
+    chmod +x ~/hypr/install/scripts/open-webui.sh
+    ~/hypr/install/scripts/open-webui.sh
+    ;;
+  n|N)
     echo "Installation cancelled."
-else
+    ;;
+  *)
     echo "Invalid choice. Please enter y or n."
-fi
+    ;;
+esac
 
-systemctl enable sddm
-systemctl enable bluetooth.service
-systemctl start bluetooth.service
+# Enable Services -----------------------------------------------------------------------------------------
+
+chmod +x ~/hypr/install/scripts/pretty-greeter-4.sh
+~/hypr/install/scripts/pretty-greeter-4.sh
+
+sudo systemctl enable sddm bluetooth.service
+sudo systemctl start bluetooth.service
+
+# Config ---------------------------------------------------------------------------------------------------
 
 echo "Installing config files"
 mv ~/hypr/config/spicetify/catppuccin ~/.config/spicetify/Themes/
-cp -r ~/hypr/config/* ~/.config/
 
 echo "Running Firefox setup..."
-chmod +x ~/.config/install/scripts/firefox.sh
-~/.config/install/scripts/firefox.sh
+chmod +x ~/hypr/install/scripts/firefox.sh
+~/hypr/install/scripts/firefox.sh
 
+cp -r ~/hypr/config/* ~/.config/
 chmod +x ~/.config/scripts/hyprlock-greeter.sh  
 chmod +x ~/.config/scripts/wireless-menu.sh
 sudo cp -r ~/.config/wlogout/icons/ /usr/share/wlogout/
 
-echo "-----------------------------------------------------------------------------------------------------------"
-
-chmod +x ~/.config/install/scripts/install-complete.sh
-~/.config/install/scripts/install-complete.sh
+chmod +x ~/hypr/install/scripts/install-complete.sh
+~/hypr/install/scripts/install-complete.sh
