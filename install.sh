@@ -39,7 +39,7 @@ esac
 # Theme Installation ------------------------------------------------------------------------------------
 
 echo "Installing Catppuccin Mocha theme..."
-mkdir ~/.themes
+mkdir -p ~/.themes
 unzip ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark.zip
 cp -r ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark ~/.themes/
 echo "Catppuccin Mocha theme has been installed successfully."
@@ -51,7 +51,7 @@ chmod +x ~/hypr/install/scripts/pretty-greeter-3.sh
 
 echo "Would you like to install Open WebUI for running local LLMs?"
 printf "Enter your choice: (y/n): "
-read choice
+read -r choice
 
 case $choice in
   y|Y)
