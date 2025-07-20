@@ -1,0 +1,6 @@
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#titlebar {
+  visibility: collapse !important;
+}
