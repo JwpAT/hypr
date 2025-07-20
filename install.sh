@@ -24,15 +24,15 @@ read -r choice
 case $choice in
   1)
     echo "Installing full installation."
-    yay -S --needed - < packages-full
+    yay -S --needed - < ~/hypr/packages-full
     ;;
   2)
     echo "Installing minimal installation."
-    yay -S --needed - < packages-min
+    yay -S --needed - < ~/hypr/packages-min
     ;;
   *)
     echo "Invalid choice. Installing minimal installation."
-    yay -S --needed - < packages-min
+    yay -S --needed - < ~/hypr/packages-min
     ;;
 esac
 
