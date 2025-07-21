@@ -41,7 +41,7 @@ esac
 echo "Installing Catppuccin Mocha theme..."
 mkdir -p ~/.themes
 unzip ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark.zip
-cp -r ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark ~/.themes/
+cp -r ~/Catppuccin-Mocha-Standard-Blue-Dark ~/.themes/
 echo "Catppuccin Mocha theme has been installed successfully."
 
 # Prompt to install Open WebUI ---------------------------------------------------------------------------
