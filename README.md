@@ -3,11 +3,9 @@
 ## Installation steps: (*Only compatible with minimal Arch installation*)
    ``` git clone https://github.com/jwpat/hypr.git ```
    
-   ``` cd hypr ```
+   ``` chmod +x /hypr/install.sh ```
    
-   ``` chmod +x install.sh ```
-   
-   ``` ./install.sh ```
+   ``` hypr/install.sh ```
 ### Features:
   ### Open WebUI LLM support
   ### catppuccin-themed applications
