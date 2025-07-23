@@ -1,4 +1,4 @@
-# *Jwp's Hyprland Dotfiles* (WIP)
+# *Jwp's Hyprland Dotfiles*
 ### For Arch Linux
 ## Installation steps: (*Only compatible with minimal Arch installation*)
    ``` git clone https://github.com/jwpat/hypr.git ```
