@@ -25,3 +25,4 @@ bluez-utils
 dialog
 bluetuith
 zenity
+jq
