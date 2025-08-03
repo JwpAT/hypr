@@ -87,6 +87,7 @@ chmod +x ~/hypr/install/scripts/firefox.sh
 cp -r ~/hypr/config/* ~/.config/
 chmod +x ~/.config/scripts/hyprlock-greeter.sh  
 chmod +x ~/.config/scripts/wireless-menu.sh
+chmod +x ~/.config/scripts/waybar-weather.sh
 sudo cp -r ~/.config/wlogout/icons/ /usr/share/wlogout/
 
 chmod +x ~/hypr/install/scripts/install-complete.sh
