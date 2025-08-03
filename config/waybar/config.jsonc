@@ -31,11 +31,11 @@
     "hyprland/workspaces",
     "network",
     "memory",
+    "custom/weather",
     "battery",
     "battery#bat2",
     "sway/mode",
     "sway/scratchpad",
-    "custom/openwebui",
     "custom/gpt"
 
     ],
@@ -87,17 +87,17 @@
 		"tooltip": false,
 		"on-click": "firefox -P ai --new-window https://chatgpt.com/"
     },
-    "custom/openwebui": {
-    "format": " ",
-        "tooltip": false,
-        "on-click": "bash ~/.config/scripts/openwebui-check.sh"
-    },
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    },
+    "custom/weather": {
+        "exec": "bash ~/.config/scripts/waybar-weather.sh",
+        "interval": 5,
+        "format": "{}"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -207,4 +207,3 @@
 		"on-click": "wlogout -b 4"
 		}
     }
-
