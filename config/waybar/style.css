@@ -69,7 +69,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    color: #fab387;
+    color: #f38ba8;
     background-color: transparent;
 }
 
@@ -119,12 +119,12 @@ button:hover {
 #custom-waypaper,
 #tray,
 #mode,
+#custom-weather,
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
 #custom-cava,
 #custom-gpt,
-#custom-openwebui,
 #custom-mspowers,
 #mpd {
     background: rgb(30, 30, 46);
@@ -153,7 +153,7 @@ button:hover {
 }
 
 #clock {
-    color: #f9e2af;
+    color: #f38ba8;
     margin-top: 5px;
     margin-right: 5px;
 }
@@ -167,13 +167,13 @@ button:hover {
     background-color: #181825;
 }
 
-#custom-waypaper {
-    color: #cba6f7;
+#custom-weather {
+    color: #a6e3a1;
     padding: 1px 6px 1px 8px;
 }
 
 #custom-spotify {
-    color: #cba6f7;
+    color: #eba0ac;
     padding: 1px 6px 1px 8px;
 }
 
@@ -197,28 +197,14 @@ button:hover {
         background-position: center;
         background-repeat: no-repeat;
         background-size: 15px 15px;
-    color: #f38ba8;
+    color: #cba6f7;
     border-radius: 7px;
 }
 
-#custom-openwebui {
-    font-size: 20px;
-        background-image: url('/home/jwp/.config/waybar/icons/open-webui.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 20px 20px; 
-    color: #f38ba8;
-    border-radius: 7px;
-}
-
-#custom-gpt:hover {
+#custom-weather:hover {
     background-color: #181825;
 }
 
-#custom-openwebui:hover {
-    background-color: #181825;
-
-}
 
 #cava-player .status {
     font-size: 18px;
@@ -226,7 +212,7 @@ button:hover {
 }
 
 #custom-power {   
-    color: #ed8796;
+    color: #cba6f7;
     background-color: rgb(30, 30, 46);
     margin-right: 5px;
     margin-top:5px;
@@ -238,7 +224,7 @@ button:hover {
 }
 
 #battery {
-    color: #fab387;
+    color: #74c7ec;
 }
 
 #battery.charging, #battery.plugged {
@@ -287,7 +273,7 @@ label:focus {
 }
 
 #memory {
-    color: #cba6f7;
+    color: #f9e2af;
 }
 
 #memory:hover {
@@ -299,12 +285,12 @@ label:focus {
 }
 
 #backlight {
-    color: #89b4fa;
+    color: #a6e3a1;
 
 }
 
 #network {
-    color: #8bd5ca;
+    color: #fab387;
 }
 
 #network.disconnected {
@@ -316,11 +302,11 @@ label:focus {
 }
 
 #pulseaudio {
-    color: #eba0ac;
+    color: #fab387;
 }
 
 #pulseaudio.muted {
-    color: #f2564b;
+    color: #fab387;
 }
 
 #wireplumber {
@@ -351,7 +337,7 @@ label:focus {
 
 #temperature {
     background: rgb(30, 30, 46);
-    color: #94e2d5;
+    color: #f9e2af;
     padding: 1px 10px 1px 10px;
     margin-top: 5px;
 }
@@ -375,14 +361,14 @@ label:focus {
 
 #idle_inhibitor {
     background: rgb(30, 30, 46);
-    color: #a6e3a1;
+    color: #89b4fa;
     padding: 1px 12px 1px 5px;
     margin-top: 5px;
 }
 
 #idle_inhibitor.activated {
     background: rgb(30, 30, 46);
-    color: #a6e3a1;
+    color: #89b4fa;
     padding: 1px 12px 1px 5px;
     margin-top: 5px;
 }
