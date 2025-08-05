@@ -67,6 +67,8 @@ case $choice in
     ;;
 esac
 
+cp -r /hypr/applications ~/.local/share/
+
 # Enable Services -----------------------------------------------------------------------------------------
 
 chmod +x ~/hypr/install/scripts/pretty-greeter-4.sh
