@@ -1,9 +1,8 @@
 [Desktop Entry]
 Name=OpenWebUI
 Comment=Launches OpenWebUI script
-Exec=/home/jwp/.config/scripts/openwebui-post.sh
+Exec=sh -c '/home/$USER/.config/scripts/openwebui-post.sh'
 Icon=utilities-terminal
 Terminal=false
 Type=Application
 Categories=Utility;
-
