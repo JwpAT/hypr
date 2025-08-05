@@ -68,6 +68,7 @@ case $choice in
 esac
 
 cp -r /hypr/install/applications ~/.local/share/
+chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop
 
 # Enable Services -----------------------------------------------------------------------------------------
 
