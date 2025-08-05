@@ -67,7 +67,7 @@ case $choice in
     ;;
 esac
 
-cp -r /hypr/applications ~/.local/share/
+cp -r /hypr/install/applications ~/.local/share/
 
 # Enable Services -----------------------------------------------------------------------------------------
 
