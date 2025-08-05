@@ -67,9 +67,6 @@ case $choice in
     ;;
 esac
 
-cp -r /hypr/install/applications ~/.local/share/
-chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop
-
 # Enable Services -----------------------------------------------------------------------------------------
 
 chmod +x ~/hypr/install/scripts/pretty-greeter-4.sh
@@ -86,6 +83,9 @@ mv ~/hypr/config/spicetify/catppuccin ~/.config/spicetify/Themes/
 echo "Running Firefox setup..."
 chmod +x ~/hypr/install/scripts/firefox.sh
 ~/hypr/install/scripts/firefox.sh
+
+cp -r /hypr/install/applications ~/.local/share/
+chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop
 
 cp -r ~/hypr/config/* ~/.config/
 chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh
