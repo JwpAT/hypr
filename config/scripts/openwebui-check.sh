@@ -11,7 +11,7 @@ if ! command -v docker &> /dev/null; then
 
     # If user chose "Install"
     if [ $? -eq 0 ]; then
-        chmod +x ~/.config/install/scripts/open-webui.sh
+        chmod +x ~/.config/scripts/open-webui.sh
         ~/.config/install/scripts/open-webui.sh
     else
         # User clicked Cancel
