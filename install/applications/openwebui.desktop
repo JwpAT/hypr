@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=OpenWebUI
 Comment=Launches OpenWebUI script
-Exec=sh -c '/home/$USER/.config/scripts/openwebui-post.sh'
+Exec=sh -c "~/.config/scripts/openwebui-post.sh"
 Icon=utilities-terminal
 Terminal=false
 Type=Application
