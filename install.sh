@@ -60,7 +60,7 @@ case $choice in
     ~/hypr/install/scripts/open-webui.sh
     ;;
   n|N)
-    echo "Installation cancelled."
+    echo "Open WebUI Installation cancelled."
     ;;
   *)
     echo "Invalid choice. Please enter y or n."
