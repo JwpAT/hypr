@@ -89,7 +89,9 @@ chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applicatio
 
 cp -r ~/hypr/config/* ~/.config/
 chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh
-sudo cp -r ~/.config/wlogout/icons/ /usr/share/wlogout/
+
+echo "jwp ALL=(ALL) NOPASSWD: /bin/cp -r /home/jwp/.config/themes/*/wlogout/icons /usr/share/wlogout/icons, /bin/cp /home/jwp/.config/themes/*/wlogout/style.css /usr/share/wlogout/style.css, /bin/rm -rf /usr/share/wlogout/icons" | sudo tee /etc/sudoers.d/wlogout-theme
+sudo chmod 440 /etc/sudoers.d/wlogout-theme
 
 chmod +x ~/hypr/install/scripts/install-complete.sh
 ~/hypr/install/scripts/install-complete.sh
