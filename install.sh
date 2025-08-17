@@ -41,7 +41,7 @@ esac
 echo "Installing Catppuccin Mocha theme..."
 mkdir -p ~/.themes
 unzip ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark.zip
-cp -r ~/Catppuccin-Mocha-Standard-Blue-Dark ~/.themes/
+cp -r ~/Downloads/Catppuccin-Mocha-Standard-Blue-Dark ~/.themes/
 echo "Catppuccin Mocha theme has been installed successfully."
 
 # Prompt to install Open WebUI ---------------------------------------------------------------------------
@@ -84,7 +84,7 @@ echo "Running Firefox setup..."
 chmod +x ~/hypr/install/scripts/firefox.sh
 ~/hypr/install/scripts/firefox.sh
 
-cp -r /hypr/install/applications ~/.local/share/
+cp -r ~/hypr/install/applications ~/.local/share/
 chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop
 
 cp -r ~/hypr/config/* ~/.config/
