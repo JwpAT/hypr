@@ -1,0 +1,109 @@
+#!/bin/bash
+
+THEME=$1
+THEME_PATH="$HOME/.config/themes/$THEME"
+
+# -----------------
+# Paths
+# -----------------
+WAYBAR_DIR="$THEME_PATH/waybar"
+HYPR_FILE="$THEME_PATH/hypr/hyprland.conf"
+KITTY_FILE="$THEME_PATH/kitty/kitty.conf"
+WOFI_FILE="$THEME_PATH/wofi/style.css"
+WLOGOUT_DIR="$THEME_PATH/wlogout"
+HYPERPAPER_FILE="$THEME_PATH/hyprpaper/hyprpaper.conf"
+WAYPAPER_FILE="$THEME_PATH/waypaper/config.ini"
+FIREFOX_USERCHROME="$THEME_PATH/firefox/userChrome.css"
+FIREFOX_USERCONTENT="$THEME_PATH/firefox/userContent.css"
+HYPRLOCK_THEME_DIR="$THEME_PATH/hyprlock"
+ACTIVE_WALL="$HOME/.config/hyprlock-walls/wall.png"
+
+# -----------------
+# Waybar
+# -----------------
+if [ -d "$WAYBAR_DIR" ]; then
+    [ -d "$HOME/.config/waybar" ] && rm -rf "$HOME/.config/waybar"
+    ln -s "$WAYBAR_DIR" "$HOME/.config/waybar"
+    pkill -x waybar
+    nohup waybar >/dev/null 2>&1 &
+fi
+
+# -----------------
+# Hyprland
+# -----------------
+if [ -f "$HYPR_FILE" ]; then
+    ln -sf "$HYPR_FILE" "$HOME/.config/hypr/hyprland.conf"
+    hyprctl reload
+fi
+
+# -----------------
+# Kitty
+# -----------------
+if [ -f "$KITTY_FILE" ]; then
+    ln -sf "$KITTY_FILE" "$HOME/.config/kitty/kitty.conf"
+    pkill -SIGUSR1 kitty
+fi
+
+# -----------------
+# Wofi
+# -----------------
+if [ -f "$WOFI_FILE" ]; then
+    ln -sf "$WOFI_FILE" "$HOME/.config/wofi/style.css"
+fi
+
+# -----------------
+# Wlogout
+# -----------------
+if [ -d "$WLOGOUT_DIR" ]; then
+    sudo cp "$WLOGOUT_DIR/style.css" /usr/share/wlogout/style.css
+    sudo rm -rf /usr/share/wlogout/icons
+    sudo cp -r "$WLOGOUT_DIR/icons" /usr/share/wlogout/icons
+fi
+
+# -----------------
+# Hyprpaper
+# -----------------
+if [ -f "$HYPERPAPER_FILE" ]; then
+    ln -sf "$HYPERPAPER_FILE" "$HOME/.config/hypr/hyprpaper.conf"
+    pkill hyprpaper
+    nohup hyprpaper >/dev/null 2>&1 &
+fi
+
+# -----------------
+# Waypaper
+# -----------------
+WAYPAPER_DEFAULT="$HOME/.config/waypaper/config.ini"
+if [ -f "$WAYPAPER_FILE" ]; then
+    mkdir -p "$HOME/.config/waypaper"
+    [ -f "$WAYPAPER_DEFAULT" ] && rm "$WAYPAPER_DEFAULT"
+    ln -sf "$WAYPAPER_FILE" "$WAYPAPER_DEFAULT"
+fi
+
+# -----------------
+# Firefox CSS (default profile)
+# -----------------
+FIREFOX_PROFILE="$HOME/.mozilla/firefox/default/chrome"
+mkdir -p "$FIREFOX_PROFILE"
+
+[ -f "$FIREFOX_USERCHROME" ] && ln -sf "$FIREFOX_USERCHROME" "$FIREFOX_PROFILE/userChrome.css"
+[ -f "$FIREFOX_USERCONTENT" ] && ln -sf "$FIREFOX_USERCONTENT" "$FIREFOX_PROFILE/userContent.css"
+
+# -----------------
+# Hyprlock
+# -----------------
+if [ -f "$HYPRLOCK_THEME_DIR/hyprlock.conf" ]; then
+    mkdir -p "$HOME/.config/hypr"
+    ln -sf "$HYPRLOCK_THEME_DIR/hyprlock.conf" "$HOME/.config/hypr/hyprlock.conf"
+fi
+
+# Symlink theme wallpaper (only PNG)
+if [ -f "$HYPRLOCK_THEME_DIR/wall.png" ]; then
+    mkdir -p "$HOME/.config/hyprlock-walls"
+    ln -sf "$HYPRLOCK_THEME_DIR/wall.png" "$ACTIVE_WALL"
+fi
+
+# -----------------
+# Notification
+# -----------------
+notify-send "Switched to theme: $THEME"
+
