@@ -1,0 +1,15 @@
+#window {
+        font-size: 16px;
+        font-family: "Hack Nerd Font";
+        background-color: rgba(17, 17, 27, 0.5);
+}
+
+#entry{
+        padding: .25em;
+
+}
+
+#entry:selected{
+        background: linear-gradient(90deg, #cba6f7, #f9e2af);
+        color: #ffffff;
+}
