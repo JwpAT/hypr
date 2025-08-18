@@ -11,8 +11,8 @@ echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >
 echo "✔️ Configuring main Firefox profile..."
 firefox -CreateProfile "default /home/$USER/.mozilla/firefox/default"
 mkdir -p ~/.mozilla/firefox/default
-cp -r ~/hypr/install/firefox/default/chrome ~/.mozilla/firefox/default/
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> ~/.mozilla/firefox/default/user.js
+echo 'user_pref("browser.tabs.allow_transparent_browser", true);' >> ~/.mozilla/firefox/default/user.js
 
 # Overwrite the generated profiles.ini and installs.ini
 echo "copying profiles.ini and installs.ini..."
