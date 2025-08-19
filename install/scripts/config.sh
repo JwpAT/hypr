@@ -1,3 +1,7 @@
+echo "Enabling services"
+sudo systemctl enable sddm bluetooth.service
+sudo systemctl start bluetooth.service
+
 echo "Installing config files"
 mv ~/hypr/config/spicetify/catppuccin ~/.config/spicetify/Themes/
 
