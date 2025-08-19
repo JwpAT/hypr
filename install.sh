@@ -49,23 +49,8 @@ echo "Catppuccin Mocha theme has been installed successfully."
 chmod +x ~/hypr/install/scripts/pretty-greeter-3.sh
 ~/hypr/install/scripts/pretty-greeter-3.sh
 
-echo "Would you like to install Open WebUI for running local LLMs?"
-printf "Enter your choice: (y/n): "
-read -r choice
-
-case $choice in
-  y|Y)
-    echo "Installing Open WebUI..."
-    chmod +x ~/hypr/install/scripts/open-webui.sh
-    ~/hypr/install/scripts/open-webui.sh
-    ;;
-  n|N)
-    echo "Open WebUI Installation cancelled."
-    ;;
-  *)
-    echo "Invalid choice. Please enter y or n."
-    ;;
-esac
+chmod +x ~/hypr/install/scripts/ai-config.sh
+~/hypr/install/scripts/ai-config.sh
 
 # Config ---------------------------------------------------------------------------------------------------
 
