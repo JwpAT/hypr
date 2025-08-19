@@ -92,7 +92,7 @@ chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.s
 
 mkdir -p ~/.config/kitty ~/.config/hyprlock-walls ~/.config/waybar ~/.config/wofi
 
-echo "jwp ALL=(ALL) NOPASSWD: /bin/cp -r /home/jwp/.config/themes/*/wlogout/icons /usr/share/wlogout/icons, /bin/cp /home/jwp/.config/themes/*/wlogout/style.css /usr/share/wlogout/style.css, /bin/rm -rf /usr/share/wlogout/icons" | sudo tee /etc/sudoers.d/wlogout-theme
+echo "$USER ALL=(ALL) NOPASSWD: /bin/cp -r $HOME/.config/themes/*/wlogout/icons /usr/share/wlogout/icons, /bin/cp $HOME/.config/themes/*/wlogout/style.css /usr/share/wlogout/style.css, /bin/rm -rf /usr/share/wlogout/icons" | sudo tee /etc/sudoers.d/wlogout-theme
 sudo chmod 440 /etc/sudoers.d/wlogout-theme
 
 echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
