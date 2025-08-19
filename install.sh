@@ -12,7 +12,6 @@ cd ..
 rm -rf yay
 
 # Installation Type ------------------------------------------------------------------------------------
-
 chmod +x ~/hypr/install/scripts/pretty-greeter-2.sh
 ~/hypr/install/scripts/pretty-greeter-2.sh
 
@@ -37,7 +36,6 @@ case $choice in
 esac
 
 # Theme Installation ------------------------------------------------------------------------------------
-
 echo "Installing Catppuccin Mocha theme..."
 mkdir -p ~/.themes
 unzip -o ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark.zip -d ~/hypr
@@ -45,15 +43,28 @@ cp -r ~/hypr/Catppuccin-Mocha-Standard-Blue-Dark ~/.themes/
 echo "Catppuccin Mocha theme has been installed successfully."
 
 # Prompt to install Open WebUI ---------------------------------------------------------------------------
-
 chmod +x ~/hypr/install/scripts/pretty-greeter-3.sh
 ~/hypr/install/scripts/pretty-greeter-3.sh
 
-chmod +x ~/hypr/install/scripts/ai-config.sh
-~/hypr/install/scripts/ai-config.sh
+echo "Would you like to install Open WebUI for running local LLMs?"
+printf "Enter your choice: (y/n): "
+read -r choice
+
+case $choice in
+  y|Y)
+    echo "Installing Open WebUI..."
+    chmod +x ~/hypr/install/scripts/open-webui.sh
+    ~/hypr/install/scripts/open-webui.sh
+    ;;
+  n|N)
+    echo "Open WebUI Installation cancelled."
+    ;;
+  *)
+    echo "Invalid choice. Please enter y or n."
+    ;;
+esac
 
 # Config ---------------------------------------------------------------------------------------------------
-
 chmod +x ~/hypr/install/scripts/final-config.sh
 ~/hypr/install/scripts/final-config.sh
 
