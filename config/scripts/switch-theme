@@ -52,12 +52,16 @@ if [ -f "$WOFI_FILE" ]; then
 fi
 
 # -----------------
-# Wlogout
+# Wlogout (per-user, no sudo)
 # -----------------
 if [ -d "$WLOGOUT_DIR" ]; then
-    sudo cp "$WLOGOUT_DIR/style.css" /usr/share/wlogout/style.css
-    sudo rm -rf /usr/share/wlogout/icons
-    sudo cp -r "$WLOGOUT_DIR/icons" /usr/share/wlogout/icons
+    mkdir -p "$HOME/.config/wlogout"
+    # style.css
+    ln -sf "$WLOGOUT_DIR/style.css" "$HOME/.config/wlogout/style.css"
+
+    # icons folder
+sudo rm -rf /usr/share/wlogout/icons 
+sudo cp -r "$WLOGOUT_DIR/icons" /usr/share/wlogout/icons 
 fi
 
 # -----------------
