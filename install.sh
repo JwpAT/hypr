@@ -69,8 +69,8 @@ esac
 
 # Config ---------------------------------------------------------------------------------------------------
 
-chmod +x ~/hypr/install/scripts/config.sh
-~/hypr/install/scripts/config.sh
+chmod +x ~/hypr/install/scripts/final-config.sh
+~/hypr/install/scripts/final-config.sh
 
 chmod +x ~/hypr/install/scripts/install-complete.sh
 ~/hypr/install/scripts/install-complete.sh
