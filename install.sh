@@ -99,6 +99,7 @@ echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 chmod +x ~/.config/scripts/switch-theme
 chmod +x ~/.config/scripts/wofi-theme.sh
+~/.config/scripts/switch-theme transparent
 
 chmod +x ~/hypr/install/scripts/install-complete.sh
 ~/hypr/install/scripts/install-complete.sh
