@@ -93,8 +93,16 @@ chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.s
 mkdir -p ~/.config/kitty ~/.config/hyprlock-walls ~/.config/waybar ~/.config/wofi
 chmod +x ~/.config/scripts/notify.sh
 
-echo "$USER ALL=(ALL) NOPASSWD: /bin/cp -r $HOME/.config/themes/*/wlogout/icons /usr/share/wlogout/icons, /bin/cp $HOME/.config/themes/*/wlogout/style.css /usr/share/wlogout/style.css, /bin/rm -rf /usr/share/wlogout/icons" | sudo tee /etc/sudoers.d/wlogout-theme
+# Allow passwordless copy/remove for your wlogout theme assets
+echo "$USER ALL=(ALL) NOPASSWD: \
+$(command -v cp) -r $HOME/.config/wlogout/themes/*/icons /usr/share/wlogout/icons, \
+$(command -v cp) $HOME/.config/wlogout/themes/*/style.css /usr/share/wlogout/style.css, \
+$(command -v rm) -rf /usr/share/wlogout/icons" \
+| sudo tee /etc/sudoers.d/wlogout-theme >/dev/null
+
 sudo chmod 440 /etc/sudoers.d/wlogout-theme
+# sanity-check the file:
+sudo visudo -cf /etc/sudoers.d/wlogout-theme
 
 echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
 source ~/.bashrc
