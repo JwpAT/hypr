@@ -91,6 +91,7 @@ cp -r ~/hypr/config/* ~/.config/
 chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh
 
 mkdir -p ~/.config/kitty ~/.config/hyprlock-walls ~/.config/waybar ~/.config/wofi
+chmod +x ~/.config/scripts/notify.sh
 
 echo "$USER ALL=(ALL) NOPASSWD: /bin/cp -r $HOME/.config/themes/*/wlogout/icons /usr/share/wlogout/icons, /bin/cp $HOME/.config/themes/*/wlogout/style.css /usr/share/wlogout/style.css, /bin/rm -rf /usr/share/wlogout/icons" | sudo tee /etc/sudoers.d/wlogout-theme
 sudo chmod 440 /etc/sudoers.d/wlogout-theme
