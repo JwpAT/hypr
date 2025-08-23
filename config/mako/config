@@ -1,0 +1,7 @@
+# Hide everything by default
+invisible=1
+default-timeout=6000
+
+# Allow only your script's notifications (app name = CutePop)
+[app-name=CutePop]
+invisible=0
