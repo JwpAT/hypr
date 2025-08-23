@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+# usage: walltheme <catppuccin|transparent>
+
+set -e
+THEME="$1"
+
+# -----------------
+# Hyprland
+# -----------------
+HYPRLAND_CONF="$HOME/.config/hypr/theme.conf"
+if [ "$THEME" = "transparent" ]; then
+    sed -i "s|^source=.*|source=./themes/hyprland/transparent.conf|" "$HYPRLAND_CONF"
+elif [ "$THEME" = "catppuccin" ]; then
+    sed -i "s|^source=.*|source=./themes/hyprland/catppuccin.conf|" "$HYPRLAND_CONF"
+fi
+
+# -----------------
+# Waypaper
+# -----------------
+ln -sf "$HOME/.config/waypaper/themes/$THEME/config.ini" \
+       "$HOME/.config/waypaper/config.ini"
+
+# -----------------
+# Waybar
+# -----------------
+WAYBAR_CSS="$HOME/.config/waybar/style.css"
+if [ "$THEME" = "transparent" ]; then
+    sed -i "s|^@import .*|@import 'themes/transparent.css';|" "$WAYBAR_CSS"
+elif [ "$THEME" = "catppuccin" ]; then
+    sed -i "s|^@import .*|@import 'themes/catppuccin.css';|" "$WAYBAR_CSS"
+fi
+pkill -x waybar 2>/dev/null || true
+nohup waybar >/dev/null 2>&1 &
+
+# -----------------
+# Hyprpaper (symlink + restart)
+# -----------------
+mkdir -p "$HOME/.config/hypr"
+HP_THEME_CONF="$HOME/.config/hypr/themes/hyprpaper/$THEME/hyprpaper.conf"
+HP_ACTIVE_CONF="$HOME/.config/hypr/hyprpaper.conf"
+ln -sfn "$HP_THEME_CONF" "$HP_ACTIVE_CONF"
+pkill -x hyprpaper >/dev/null 2>&1 || true
+hyprpaper -c "$HP_ACTIVE_CONF" & disown
+
+# -----------------
+# Hyprlock
+# -----------------
+ln -sf "$HOME/.config/hypr/themes/hyprlock/$THEME/hyprlock.conf" \
+       "$HOME/.config/hypr/hyprlock.conf"
+
+# -----------------
+# Wlogout
+# -----------------
+WLOGOUT_DIR="$HOME/.config/wlogout/themes/$THEME"
+if [ -d "$WLOGOUT_DIR" ]; then
+    mkdir -p "$HOME/.config/wlogout"
+    ln -sf "$WLOGOUT_DIR/style.css" "$HOME/.config/wlogout/style.css"
+    sudo rm -rf /usr/share/wlogout/icons
+    sudo cp -r "$WLOGOUT_DIR/icons" /usr/share/wlogout/icons
+fi
+
+# -----------------
+# Wofi
+# -----------------
+WOFI_DIR="$HOME/.config/wofi/themes/$THEME"
+if [ -d "$WOFI_DIR" ]; then
+    mkdir -p "$HOME/.config/wofi"
+    ln -sf "$WOFI_DIR/style.css" "$HOME/.config/wofi/style.css"
+fi
+
+# -----------------
+# Firefox CSS
+# -----------------
+FIREFOX_THEME_DIR="$HOME/.config/firefox/$THEME"
+FIREFOX_PROFILE="$HOME/.mozilla/firefox/default/chrome"
+[ -f "$FIREFOX_THEME_DIR/userChrome.css" ]   && ln -sf "$FIREFOX_THEME_DIR/userChrome.css"   "$FIREFOX_PROFILE/userChrome.css"
+[ -f "$FIREFOX_THEME_DIR/userContent.css" ] && ln -sf "$FIREFOX_THEME_DIR/userContent.css" "$FIREFOX_PROFILE/userContent.css"
+
+# -----------------
+# Kitty
+# -----------------
+KITTY_CONF="$HOME/.config/kitty/kitty.conf"
+if [ "$THEME" = "transparent" ]; then
+    sed -i 's|^include .*|include ~/.config/kitty/themes/transparent.conf|' "$KITTY_CONF"
+elif [ "$THEME" = "catppuccin" ]; then
+    sed -i 's|^include .*|include ~/.config/kitty/themes/catppuccin.conf|' "$KITTY_CONF"
+fi
+pkill -SIGUSR1 kitty
