@@ -90,10 +90,9 @@ chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applicatio
 cp -r ~/hypr/config/* ~/.config/
 chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh
 
-mkdir -p ~/.config/kitty ~/.config/hyprlock-walls ~/.config/waybar ~/.config/wofi
+mkdir -p ~/.config/hyprlock-walls
 chmod +x ~/.config/scripts/notify.sh
 
-# Allow passwordless copy/remove for your wlogout theme assets
 echo "$USER ALL=(ALL) NOPASSWD: \
 $(command -v cp) -r $HOME/.config/wlogout/themes/*/icons /usr/share/wlogout/icons, \
 $(command -v cp) $HOME/.config/wlogout/themes/*/style.css /usr/share/wlogout/style.css, \
@@ -101,8 +100,12 @@ $(command -v rm) -rf /usr/share/wlogout/icons" \
 | sudo tee /etc/sudoers.d/wlogout-theme >/dev/null
 
 sudo chmod 440 /etc/sudoers.d/wlogout-theme
-# sanity-check the file:
 sudo visudo -cf /etc/sudoers.d/wlogout-theme
+
+mkdir -p ~/.config/wallpapers/transparent
+mkdir -p ~/.config/wallpapers/catppuccin
+unzip -o ~/.config/wallpapers/transparent.zip -d ~/.config/wallpapers/
+unzip -o ~/.config/wallpapers/catppuccin.zip -d ~/.config/wallpapers/
 
 echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
 source ~/.bashrc
