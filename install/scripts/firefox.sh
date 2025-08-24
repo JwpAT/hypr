@@ -8,7 +8,7 @@ cp -r ~/hypr/install/firefox/ai/chrome ~/.mozilla/firefox/ai/
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> ~/.mozilla/firefox/ai/user.js
 
 # Configuring Main Firefox Profile
-echo "✔️ Configuring main Firefox profile..."
+echo "Configuring main Firefox profile..."
 firefox -CreateProfile "default /home/$USER/.mozilla/firefox/default"
 mkdir -p ~/.mozilla/firefox/default
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> ~/.mozilla/firefox/default/user.js
