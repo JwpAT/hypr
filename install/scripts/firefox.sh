@@ -10,7 +10,7 @@ echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >
 # Configuring Main Firefox Profile
 echo "Configuring main Firefox profile..."
 firefox -CreateProfile "default /home/$USER/.mozilla/firefox/default"
-mkdir -p ~/.mozilla/firefox/default
+mkdir -p ~/.mozilla/firefox/default/chrome
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> ~/.mozilla/firefox/default/user.js
 echo 'user_pref("browser.tabs.allow_transparent_browser", true);' >> ~/.mozilla/firefox/default/user.js
 
