@@ -1,0 +1,31 @@
+@-moz-document url("about:home"), url("about:newtab") {
+  * {
+    background-color: transparent !important;
+  }
+
+  /* optional semi-transparent root instead of full transparency */
+  html:root {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+@-moz-document url("about:home"), url("about:newtab") {
+  /* hide top search suggestions when the search bar is focused */
+  .search-suggestions,
+  .search-handoff-button,
+  .search-inner-wrapper > .search-suggestion {
+    display: none !important;
+  }
+}
+
+/* Make only the active tab background transparent */
+.tabbrowser-tab[selected="true"] .tab-background {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Optional: remove border so it blends smoothly */
+.tabbrowser-tab[selected="true"] .tab-background[selected="true"] {
+    border: none !important;
+}
+
