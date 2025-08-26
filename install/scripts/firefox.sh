@@ -6,6 +6,7 @@ firefox -CreateProfile "ai /home/$USER/.mozilla/firefox/ai"
 mkdir -p ~/.mozilla/firefox/ai
 cp -r ~/hypr/install/firefox/ai/chrome ~/.mozilla/firefox/ai/
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> ~/.mozilla/firefox/ai/user.js
+echo 'user_pref("browser.tabs.allow_transparent_browser", true);' >> ~/.mozilla/firefox/ai/user.js
 
 # Configuring Main Firefox Profile
 echo "Configuring main Firefox profile..."
