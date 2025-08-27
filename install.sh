@@ -70,10 +70,8 @@ cp -r ~/hypr/install/applications ~/.local/share/
 chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop
 
 cp -r ~/hypr/config/* ~/.config/
-chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh
 
 mkdir -p ~/.config/hyprlock-walls
-chmod +x ~/.config/scripts/notify.sh
 
 echo "$USER ALL=(ALL) NOPASSWD: \
 $(command -v cp) -r $HOME/.config/wlogout/themes/*/icons /usr/share/wlogout/icons, \
@@ -91,8 +89,9 @@ unzip -o ~/.config/wallpapers/catppuccin.zip -d ~/.config/wallpapers/
 
 echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
 source ~/.bashrc
-chmod +x ~/.config/scripts/switch-theme
-chmod +x ~/.config/scripts/wofi-theme.sh
+
+chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh ~/.config/scripts/notify.sh ~/.config/scripts/bongocat-cat.sh ~/.config/scripts/wofi-theme.sh ~/.config/scripts/switch-theme
+
 ~/.config/scripts/switch-theme transparent
 
 chmod +x ~/hypr/install/scripts/install-complete.sh
