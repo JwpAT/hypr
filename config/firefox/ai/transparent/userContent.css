@@ -1,0 +1,45 @@
+/* Make ChatGPT background fully transparent (your base) */
+@-moz-document domain("chatgpt.com") {
+  html, body { background: transparent !important; }
+
+  /* Sidebar */
+  .sticky.left-0, nav, aside {
+    background: transparent !important;
+  }
+
+  /* Top bar */
+  header, .sticky.top-0 {
+    background: transparent !important;
+  }
+
+  /* Bottom faded bar */
+  .sticky.bottom-0,
+  .absolute.bottom-0,
+  footer {
+    background: transparent !important;
+  }
+
+  /* Remove blur/fade effects if any */
+  .backdrop-blur,
+  .bg-gradient-to-t,
+  .bg-gradient-to-b {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  /* ---------- EXTRA FIXES (bottom gradient + sidebar) ---------- */
+
+  /* 1) Kill the thread-bottom gradient, masks, and shadows */
+
+  /* Some fades come from pseudo-elements */
+  #thread-bottom-container::before,
+  #thread-bottom-container::after,
+  #thread-bottom::before,
+  #thread-bottom::after {
+    content: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    mask: none !important;
+    -webkit-mask: none !important;
+  }
+}

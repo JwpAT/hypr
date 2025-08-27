@@ -1,0 +1,15 @@
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#titlebar {
+  visibility: collapse !important;
+}
+
+#browser {
+  background-color: rgba(0, 0, 0, 0.2) !important; /* dark gray with 0.8 opacity */
+  backdrop-filter: blur(6px) !important; /* optional blur for effect */
+}
+
+#main-window, #tabbrowser-tabpanels{ background: transparent !important; }
+
+
