@@ -1,0 +1,468 @@
+/*                                                                                                                                       */
+/*    /$$      /$$                     /$$                                  /$$$$$$   /$$               /$$                              */
+/*   | $$  /$ | $$                    | $$                                 /$$__  $$ | $$              | $$                              */
+/*   | $$ /$$$| $$  /$$$$$$  /$$   /$$| $$$$$$$   /$$$$$$   /$$$$$$       | $$  \__//$$$$$$   /$$   /$$| $$  /$$$$$$                     */
+/*   | $$/$$ $$ $$ |____  $$| $$  | $$| $$__  $$ |____  $$ /$$__  $$      |  $$$$$$|_  $$_/  | $$  | $$| $$ /$$__  $$                    */
+/*   | $$$$_  $$$$  /$$$$$$$| $$  | $$| $$  \ $$  /$$$$$$$| $$  \__/       \____  $$ | $$    | $$  | $$| $$| $$$$$$$$                    */
+/*   | $$$/ \  $$$ /$$__  $$| $$  | $$| $$  | $$ /$$__  $$| $$             /$$  \ $$ | $$ /$$| $$  | $$| $$| $$_____/                    */
+/*   | $$/   \  $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$            |  $$$$$$/ |  $$$$/|  $$$$$$$| $$|  $$$$$$$                    */
+/*   |__/     \__/ \_______/ \____  $$|_______/  \_______/|__/             \______/   \___/   \____  $$|__/ \_______/                    */
+/*                           /$$  | $$                                                        /$$  | $$                                  */
+/*                          |  $$$$$$/                                                       |  $$$$$$/                                  */
+/*                           \______/                                                         \______/                                   */
+/*    ____               _                                                                                                               */
+/*   |  _ \             | |                                                                                                              */
+/*   | |_) |_   _       | |_      ___ __                                                                                                 */
+/*   |  _ <| | | |  _   | \ \ /\ / / '_ \                                                                                                */
+/*   | |_) | |_| | | |__| |\ V  V /| |_) |                                                                                               */
+/*   |____/ \__, |  \____/  \_/\_/ | .__/                                                                                                */
+/*           __/ |                 | |                                                                                                   */
+/*          |___/                  |_|                                                                                                   */
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Hack Nerd Font;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 7px;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0);
+    color: #ffffff;
+    border-radius: 0px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+tooltip {
+    background: rgb(30, 30, 46);
+    border-radius: 7px;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #11111b;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: #181825;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #f38ba8;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+}
+
+#workspaces button.focused {
+    background-color: rgba(5, 5, 5, 0.2);
+    box-shadow: inset 0 0px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#workspaces button.visible {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+    
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 0px #ffffff;
+    background: rgba(5, 5, 5, 0.3);
+    color: #000000;
+    padding: 1px 10px 1px 10px;
+    border-radius: 0px 0px 0px 0px;
+    margin-top: 5px;
+}
+
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#custom-spotify,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#custom-waypaper,
+#tray,
+#mode,
+#custom-weather,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#custom-cava,
+#custom-gpt,
+#custom-mspowers,
+#mpd {
+    background: rgb(30, 30, 46);
+    padding: 1px 10px 1px 10px;
+    margin-top: 5px;
+}
+
+#window,
+
+#workspaces {
+    background: rgb(30, 30, 46);
+    color: #f5e0dc;
+    padding: 1px 1px 1px 1px;
+    margin-top: 5px;
+    
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 5;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    color: #f38ba8;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#custom-mspowers {
+    color: #f9e2af;
+    margin-top: 5px;
+}
+
+#clock:hover {
+    background-color: #181825;
+}
+
+#custom-weather {
+    color: #74c7ec;
+    padding: 1px 6px 1px 8px;
+}
+
+#custom-spotify {
+    color: #eba0ac;
+    padding: 1px 6px 1px 8px;
+}
+
+#custom-waypaper:hover {
+    background-color: #181825;
+}
+
+#custom-cava {
+    background: rgb(30, 30, 46);
+    color: #c6a0f6;
+    padding: 1px 10px;
+}
+
+#custom-cava:hover {
+    background-color: #181825;
+}
+
+#custom-gpt {
+    font-size: 20px;
+        background-image: url('/home/jwp/.config/waybar/icons/openai-catppuccin.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
+    color: #cba6f7;
+    border-radius: 7px;
+}
+
+#custom-gpt:hover {
+    background-color: #181825;
+}
+
+#custom-weather:hover {
+    background-color: #181825;
+}
+
+
+#cava-player .status {
+    font-size: 18px;
+    color: #ffffff; /* White icon color */
+}
+
+#custom-power {   
+    color: #cba6f7;
+    background-color: rgb(30, 30, 46);
+    margin-right: 5px;
+    margin-top:5px;
+    padding: 1px 5px 1px 2px;
+}
+
+#custom-power:hover {
+    background-color: #181825;
+}
+
+#battery {
+    color: #cba6f7;
+}
+
+#battery.charging, #battery.plugged {
+    color: #85eb81;
+}
+
+@keyframes blink {
+    to {
+        background: rgb(30, 30, 46);
+        color: #000000;
+        padding: 1px 10px 1px 10px;
+        margin-top: 5px;
+
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery:hover {
+    background-color: #181825;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+        color: #000000;
+}
+
+#power-profiles-daemon.performance {
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #000000;
+}
+
+label:focus {
+    background: rgb(30, 30, 46);
+}
+
+#memory {
+    color: #f9e2af;
+}
+
+#memory:hover {
+    background-color: #181825;
+}
+
+#disk {
+    background: rgb(30, 30, 46);
+}
+
+#backlight {
+    color: #a6e3a1;
+
+}
+
+#backlight:hover {
+    background-color: #181825;
+}
+
+#network {
+    color: #fab387;
+}
+
+#network.disconnected {
+    color: #f2564b;
+}
+
+#network:hover {
+    background-color: #181825;
+}
+
+#pulseaudio {
+    color: #fab387;
+}
+
+#pulseaudio.muted {
+    color: #fab387;
+}
+
+#wireplumber {
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background: rgb(30, 30, 46);
+    padding: 1px 10px 1px 10px;
+    margin-top: 5px;
+}
+
+#custom-media {
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background: rgb(30, 30, 46);
+    padding: 1px 10px 1px 10px;
+    margin-top: 5px;
+}
+
+#custom-media.custom-vlc {
+    background: rgb(30, 30, 46);
+    margin-top: 5px;
+}
+
+#temperature {
+    background: rgb(30, 30, 46);
+    color: #f9e2af;
+    padding: 1px 10px 1px 10px;
+    margin-top: 5px;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: #2980b9;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background: rgb(30, 30, 46);
+    color: #89b4fa;
+    padding: 1px 12px 1px 5px;
+    margin-top: 5px;
+}
+
+#idle_inhibitor.activated {
+    background: rgb(30, 30, 46);
+    color: #89b4fa;
+    padding: 1px 12px 1px 5px;
+    margin-top: 5px;
+}
+
+#idle_inhibitor:hover {
+    background-color: #181825;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgb(30, 30, 46);
+}
+
+#scratchpad {
+    background: rgb(30, 30, 46);
+        background: rgba(5, 5, 5, 0.2);
+        color: #000000;
+        padding: 1px 10px 1px 10px;
+        margin-top: 5px;
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+        background: rgb(30, 30, 46);
+        color: #000000;
+        padding: 1px 10px 1px 10px;
+        margin-top: 5px;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
