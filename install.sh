@@ -11,30 +11,12 @@ makepkg -si
 cd ..
 rm -rf yay
 
-# Installation Type ------------------------------------------------------------------------------------
+# Installation - Packages ------------------------------------------------------------------------------------
 
 chmod +x ~/hypr/install/scripts/pretty-greeter-2.sh
 ~/hypr/install/scripts/pretty-greeter-2.sh
 
-echo "Select installation type:"
-echo "1) Full installation"
-echo "2) Minimal installation"
-read -r choice
-
-case $choice in
-  1)
-    echo "Installing full installation."
-    yay -S --needed - < ~/hypr/packages-full
-    ;;
-  2)
-    echo "Installing minimal installation."
-    yay -S --needed - < ~/hypr/packages-min
-    ;;
-  *)
-    echo "Invalid choice. Installing minimal installation."
-    yay -S --needed - < ~/hypr/packages-min
-    ;;
-esac
+yay -S --needed - < ~/hypr/packages
 
 # Theme Installation ------------------------------------------------------------------------------------
 
