@@ -70,6 +70,16 @@ if [ -d "$WOFI_DIR" ]; then
 fi
 
 # -----------------
+# Cava
+# -----------------
+CAVA_DIR="$HOME/.config/cava/themes/$THEME"
+if [ -d "$CAVA_DIR" ]; then
+    mkdir -p "$HOME/.config/cava"
+    ln -sf "$CAVA_DIR/config" "$HOME/.config/cava/config"
+fi
+pkill -USR1 cava
+
+# -----------------
 # Firefox CSS (DEFAULT)
 # -----------------
 FIREFOX_THEME_DIR="$HOME/.config/firefox/default/$THEME"
