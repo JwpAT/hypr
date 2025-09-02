@@ -90,7 +90,8 @@ unzip -o ~/.config/wallpapers/catppuccin.zip -d ~/.config/wallpapers/
 echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
-chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh ~/.config/scripts/notify.sh ~/.config/scripts/bongocat-cat.sh ~/.config/scripts/wofi-theme.sh ~/.config/scripts/switch-theme
+chmod +x ~/.config/scripts/hyprlock-greeter.sh ~/.config/scripts/wireless-menu.sh ~/.config/scripts/waybar-weather.sh ~/.config/scripts/notify.sh ~/.config/scripts/bongocat-cat.sh ~/.config/scripts/wofi-theme.sh ~/.config/scripts/switch-theme ~/.config/scripts/openwebui-post.sh
+
 sudo usermod -a -G input $USER
 
 ~/.config/scripts/switch-theme transparent
