@@ -43,7 +43,26 @@ messages=(
   "Your vibe is precious, your joy is contagious, keep sharing it 💕"
   "Be silly, be kind, be you — it’s more than enough 🦢💗"
   "Right now, exactly as you are, you’re someone worth celebrating 🎉"
-
+  "Hi sweetpea 🌸 just checking in: you’re loved, you’re safe, you’re precious."
+  "Bundle of joy delivery incoming 📦💖 open your heart, it’s for you."
+  "Big stretch!! 🐱 paws out, deep breath, you’re doing so well."
+  "Reminder 🌟 it’s okay to be soft, it’s okay to rest, it’s okay to shine."
+  "Look at you go 🏃‍♀️💨 superstar in the making."
+  "Hey cutie pie 🥧 remember you’re the main character today."
+  "Your sparkle ✨ is not optional — it’s part of who you are."
+  "One step at a time, babe 🪴 you’re still growing beautifully."
+  "Squish alert 🧸 you deserve a thousand cozy hugs."
+  "You radiate kindness 💕 and the world feels it every day."
+  "Even if today feels heavy 🪨, you are still golden inside."
+  "Hi bestie 👋 drink some water, unclench that jaw, stretch it out."
+  "Remember: queer joy is resistance 🏳️‍🌈💫 keep glowing."
+  "Good night angel 🌙💤 your dreams deserve to be sweet."
+  "Little dance break 💃 your body loves when you move."
+  "You’re not behind, you’re not late ⏰ you’re exactly where you need to be."
+  "Cute face check 😍 yep, still adorable."
+  "Your laughter is medicine 🍯 share it with yourself first."
+  "You bring softness into a world that needs it 🌷 thank you."
+  "Even clouds can’t hide your sunshine ☁️☀️ keep shining."
 )
 
 msg=${messages[$RANDOM % ${#messages[@]}]}
