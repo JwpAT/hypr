@@ -5,7 +5,7 @@
 # Run everything in a subshell and detach
 (
     # List of themes
-    OPTIONS="catppuccin\ntransparent"
+    OPTIONS="catppuccin\ntransparent\nultradark"
 
     # Show Wofi menu and get selection
     CHOICE=$(echo -e "$OPTIONS" | wofi --dmenu --prompt "Select Waybar Theme:")
@@ -17,6 +17,9 @@
             ;;
         transparent)
             ~/.config/scripts/switch-theme transparent
+            ;;
+        ultradark)
+            ~/.config/scripts/switch-theme ultradark
             ;;
         *)
             # Do nothing if canceled
