@@ -1,0 +1,15 @@
+#window {
+        font-size: 16px;
+        font-family: "Hack Nerd Font";
+        background-color: #000000;
+}
+
+#entry{
+        padding: .25em;
+
+}
+
+#entry:selected{
+        background: #161615;
+        color: #DDDDDD;
+}
