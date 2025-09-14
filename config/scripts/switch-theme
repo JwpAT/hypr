@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: walltheme <catppuccin|transparent>
+# usage: walltheme <catppuccin|transparent|ultradark>
 
 set -e
 THEME="$1"
@@ -8,12 +8,20 @@ THEME="$1"
 # Hyprland
 # -----------------
 HYPRLAND_CONF="$HOME/.config/hypr/theme.conf"
-if [ "$THEME" = "transparent" ]; then
+case "$THEME" in
+  transparent)
     sed -i "s|^source=.*|source=./themes/hyprland/transparent.conf|" "$HYPRLAND_CONF"
-    pkill bongocat
-elif [ "$THEME" = "catppuccin" ]; then
+    pkill bongocat 2>/dev/null || true
+    ;;
+  catppuccin)
     sed -i "s|^source=.*|source=./themes/hyprland/catppuccin.conf|" "$HYPRLAND_CONF"
-fi
+    ;;
+  ultradark)
+    sed -i "s|^source=.*|source=./themes/hyprland/ultradark.conf|" "$HYPRLAND_CONF"
+    pkill bongocat 2>/dev/null || true
+    ;;
+esac
+
 
 # -----------------
 # Waypaper
@@ -27,9 +35,12 @@ ln -sf "$HOME/.config/waypaper/themes/$THEME/config.ini" \
 WAYBAR_CSS="$HOME/.config/waybar/style.css"
 if [ "$THEME" = "transparent" ]; then
     sed -i "s|^@import .*|@import 'themes/transparent.css';|" "$WAYBAR_CSS"
+elif [ "$THEME" = "ultradark" ]; then
+    sed -i "s|^@import .*|@import 'themes/ultradark.css';|" "$WAYBAR_CSS"
 elif [ "$THEME" = "catppuccin" ]; then
     sed -i "s|^@import .*|@import 'themes/catppuccin.css';|" "$WAYBAR_CSS"
 fi
+
 pkill -x waybar 2>/dev/null || true
 nohup waybar >/dev/null 2>&1 &
 
@@ -85,16 +96,19 @@ FIREFOX_AI_PROFILE="$HOME/.mozilla/firefox/ai/chrome"
 [ -f "$FIREFOX_AI_THEME_DIR/userChrome.css" ]   && ln -sf "$FIREFOX_AI_THEME_DIR/userChrome.css"   "$FIREFOX_AI_PROFILE/userChrome.css"
 [ -f "$FIREFOX_AI_THEME_DIR/userContent.css" ] && ln -sf "$FIREFOX_AI_THEME_DIR/userContent.css" "$FIREFOX_AI_PROFILE/userContent.css"
 
-
 # -----------------
 # Kitty
 # -----------------
 KITTY_CONF="$HOME/.config/kitty/kitty.conf"
-if [ "$THEME" = "transparent" ]; then
-    sed -i 's|^include .*|include ~/.config/kitty/themes/transparent.conf|' "$KITTY_CONF"
+
+if [ "$THEME" = "ultradark" ]; then
+    sed -i 's|^include .*|include ~/.config/kitty/themes/ultradark.conf|' "$KITTY_CONF"
 elif [ "$THEME" = "catppuccin" ]; then
     sed -i 's|^include .*|include ~/.config/kitty/themes/catppuccin.conf|' "$KITTY_CONF"
+elif [ "$THEME" = "transparent" ]; then
+    sed -i 's|^include .*|include ~/.config/kitty/themes/transparent.conf|' "$KITTY_CONF"
 fi
+
 pkill -SIGUSR1 kitty
 
 # -----------------
@@ -106,4 +120,3 @@ if [ -d "$CAVA_DIR" ]; then
     ln -sf "$CAVA_DIR/config" "$HOME/.config/cava/config"
 fi
 pkill -USR1 cava
-
