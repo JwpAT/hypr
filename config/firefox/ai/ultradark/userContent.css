@@ -1,0 +1,115 @@
+/* ChatGPT custom theme */
+@-moz-document domain("chatgpt.com") {
+  /* Base background */
+  html, body {
+    background-color: #000000 !important;
+  }
+
+  /* Sidebar */
+  .sticky.left-0,
+  nav,
+  aside {
+    background-color: #000000 !important;
+  }
+
+  /* Top bar */
+  header,
+  .sticky.top-0 {
+    background-color: #000000 !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Remove blur/fade effects */
+  .backdrop-blur,
+  .bg-gradient-to-t,
+  .bg-gradient-to-b {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Thread bottom container fade (disabled) */
+  #thread-bottom-container::before,
+  #thread-bottom-container::after,
+  #thread-bottom::before,
+  #thread-bottom::after {
+    content: none !important;
+    background: none !important;
+  }
+
+  /* Input bar background */
+  form.group\/composer .bg-token-bg-primary,
+  form.group\/composer [style*="border-radius: 28px"],
+  form.group\/composer [class*="dark:bg"][class*="#303030"] {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    border-radius: 28px !important;
+  }
+
+  /* Mini sidebar (collapsed icon bar) */
+  aside[class*="sidebar"],
+  div[class*="sidebar"][class*="shrink"],
+  div[id*="sidebar"][class*="flex"],
+  div[class*="sidebar"] > div:only-child {
+    background-color: #000000 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Add options menu popovers */
+  [role="menu"],
+  [data-radix-popper-content-wrapper] > div,
+  [class*="popover"],
+  [class*="dropdown"] {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    border-radius: 10px !important;
+  }
+
+  /* User message bubbles */
+  .user-message-bubble-color {
+    background-color: #090909 !important;
+    background-image: none !important;
+    border-color: transparent !important;
+  }
+
+  /* Profile/account block at bottom of sidebar */
+  .sticky.bottom-0.z-30,
+  .sticky.bottom-0.z-30 * {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border: none !important;
+  }
+
+  /* Top rounded bar with "css" label */
+  .flex.items-center.text-token-text-secondary.px-4.py-2.text-xs.font-sans.justify-between.h-9.bg-token-sidebar-surface-primary.select-none.rounded-t-2xl {
+    background-color: #090909 !important;
+    background-image: none !important;
+    border: none !important;
+  }
+
+  /* Disclaimer footer ("ChatGPT can make mistakes…") */
+  .text-token-text-secondary.relative.mt-auto.flex.min-h-8.w-full.items-center.justify-center.p-2.text-center.text-xs {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Top bar sticky header */
+  .sticky.top-0.z-30.bg-token-bg-elevated-secondary {
+    background-color: #000000 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Scrollable panel areas */
+  .contain-inline-size {
+    background-color: #090909 !important;
+    background-image: none !important;
+    border: none !important;
+  }
+}
