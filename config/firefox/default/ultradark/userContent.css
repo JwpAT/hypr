@@ -1,0 +1,12 @@
+@-moz-document url("about:home"), url("about:newtab") {
+    body { background: transparent !important;}
+    .activity-stream {
+      background-color: #000000 !important;
+    }
+/* Make fake-editable (search bar) background black */
+  .search-handoff-button,
+  .search-inner-wrapper,
+  .fake-editable {
+    display: none !important;
+  }
+}

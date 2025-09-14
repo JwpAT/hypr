@@ -1,0 +1,19 @@
+/* userChrome.css - makes Firefox UI 80% transparent */
+
+:root {
+  --toolbar-bg-opacity: 0.4 !important;
+}
+
+#navigator-toolbox,
+#TabsToolbar,
+#Tabs,
+#nav-bar,
+#PersonalToolbar,
+#titlebar,
+#browser {
+  background-color: rgba(0, 0, 0, 0.4) !important; /* dark gray with 0.8 opacity */
+  backdrop-filter: blur(6px) !important; /* optional blur for effect */
+  -moz-appearance: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
