@@ -71,8 +71,6 @@ chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applicatio
 
 cp -r ~/hypr/config/* ~/.config/
 
-mkdir -p ~/.config/hyprlock-walls
-
 echo "$USER ALL=(ALL) NOPASSWD: \
 $(command -v cp) -r $HOME/.config/wlogout/themes/*/icons /usr/share/wlogout/icons, \
 $(command -v cp) $HOME/.config/wlogout/themes/*/style.css /usr/share/wlogout/style.css, \
