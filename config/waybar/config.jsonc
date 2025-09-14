@@ -1,0 +1,211 @@
+// -*- mode: jsonc -*-
+//
+// /$$      /$$                     /$$                                   /$$$$$$                       /$$$$$$  /$$
+// | $$  /$ | $$                    | $$                                 /$$__  $$                     /$$__  $$|__/
+// | $$ /$$$| $$  /$$$$$$  /$$   /$$| $$$$$$$   /$$$$$$   /$$$$$$       | $$  \__/  /$$$$$$  /$$$$$$$ | $$  \__/ /$$  /$$$$$$
+// | $$/$$ $$ $$ |____  $$| $$  | $$| $$__  $$ |____  $$ /$$__  $$      | $$       /$$__  $$| $$__  $$| $$$$    | $$ /$$__  $$
+// | $$$$_  $$$$  /$$$$$$$| $$  | $$| $$  \ $$  /$$$$$$$| $$  \__/      | $$      | $$  \ $$| $$  \ $$| $$_/    | $$| $$  \ $$
+// | $$$/ \  $$$ /$$__  $$| $$  | $$| $$  | $$ /$$__  $$| $$            | $$    $$| $$  | $$| $$  | $$| $$      | $$| $$  | $$
+// | $$/   \  $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$            |  $$$$$$/|  $$$$$$/| $$  | $$| $$      | $$|  $$$$$$$
+// |__/     \__/ \_______/ \____  $$|_______/  \_______/|__/             \______/  \______/ |__/  |__/|__/      |__/ \____  $$
+//                         /$$  | $$                                                                                 /$$  \ $$
+//                        | $$$$$$$/                                                                                |  $$$$$$/
+//                         \______/                                                                                  \______/
+//   ___               _
+// |  _ \             | |
+// | |_) |_   _       | |_      ___ __
+// |  _ <| | | |  _   | \ \ /\ / / '_ \
+// | |_) | |_| | | |__| |\ V  V /| |_) |
+// |____/ \__, |  \____/  \_/\_/ | .__/
+//         __/ |                 | |
+//        |___/                  |_|
+
+{
+       "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+    "hyprland/workspaces",
+    "network",
+    "memory",
+    "custom/gpt",
+    "custom/weather",
+    "battery",
+    "battery#bat2",
+    "sway/mode",
+    "sway/scratchpad"
+
+    ],
+    "modules-center": [
+	"clock"
+
+    ],
+    "modules-right": [
+        "custom/spotify",
+        "pulseaudio",
+        "temperature",
+    //    "keyboard-state",
+        "sway/language",
+        "backlight",
+        "idle_inhibitor",
+        "custom/power"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 3
+       }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "custom/cava": {
+        "format" : " ",
+                "tooltip": false,
+                "on-click": "kitty -e cava"
+    },
+    "custom/spotify": {
+    "exec": "/usr/bin/python3 ~/.config/scripts/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl --player spotify play-pause",
+    "on-double-click": "playerctl next",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+    },
+    "custom/waypaper": {
+	"format": " ",
+		"tooltip": false,
+		"on-click": "waypaper"
+    },
+    "custom/gpt": {
+	"format": " ",
+		"tooltip": false,
+		"on-click": "firefox -P ai --new-window https://chatgpt.com/"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "custom/weather": {
+        "exec": "bash ~/.config/scripts/waybar-weather.sh",
+        "on-click": "mousam",
+        "interval": 5,
+        "tooltip": false,
+        "format": "{}"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "format": "{}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+	"interval": 3,
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        "format-wifi": "Connected   • ",
+	"on-click": "kitty --class floatwlmenu -e bash ~/.config/scripts/wireless-menu.sh",
+        "format-ethernet": "Connected 󰈀  • ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "No Internet  "
+//      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },	
+    "pulseaudio": {
+
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": "  {icon} ",
+        "format-muted": " ",
+        "format-source": " {volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+        "format" : " ⏻ ",
+		"tooltip": false,
+		"on-click": "wlogout -b 4"
+		}
+    }
