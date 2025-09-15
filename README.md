@@ -7,7 +7,7 @@
    
    ``` hypr/install.sh ```
 ### Features:
-  ### Open WebUI LLM support
+  ### Local LLM support (Option in installation)
   ### catppuccin-themed applications
   ### quick, smooth animations and window switching
   ### hyprlock greeter
