@@ -1,5 +1,4 @@
 # *Jwp's Hypr Dots*
-### For Arch Linux
 ### Features:
 * Local LLM support (Option in installation)
 * Three themes (beta)
