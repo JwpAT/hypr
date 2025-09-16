@@ -12,8 +12,14 @@
   ### quick, smooth animations and window switching
   ### hyprlock greeter
 # Photo gallery:
-| Catppuccin | Transparent | Ultradark |
-|------------|-------------|-----------|
-| ![Catppuccin](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/catppuccin.png) | ![Transparent](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/transparent.png) | ![Ultradrk](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) |
+## Themes:
+| Catppuccin | Transparent |
+|------------|-------------|
+| ![Catppuccin](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/catppuccin.png) | ![Transparent](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/transparent.png) | 
+
+## New theme - Ultradark - Perfect for OLED displays | added 2025/09/14
+| Ultradark |
+|-----------|
+![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) |
 
   
