@@ -12,7 +12,7 @@
   ### quick, smooth animations and window switching
   ### hyprlock greeter
 # Photo gallery:
-##Catppuccin
+## Catppuccin
 ![image alt](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/catppuccin.png)
   
   
