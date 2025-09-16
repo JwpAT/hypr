@@ -1,4 +1,4 @@
-# *Jwp's Hypr Dots* - ![Last Commit](https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7)
+# *Jwp's Hypr Dots* * ![Last Commit](https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7)
 ### Features:
 * Local LLM support (Option in installation)
 * Three themes (Catppuccin/Ultradark/Transparent)
