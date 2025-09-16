@@ -4,6 +4,10 @@
 * Three themes (Catppuccin/Ultradark/Transparent)
 * Quick, smooth animations and window switching
 * Hyprlock greeter
+
+![Last Commit](https://img.shields.io/github/last-commit/JwpAT/hypr?color=blueviolet)
+
+
 # Photo gallery:
 ## Themes:
 | Catppuccin | Transparent |
