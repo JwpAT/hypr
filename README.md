@@ -1,7 +1,7 @@
 # *Jwp's Hypr Dots*
 ### Features:
 * Local LLM support (Option in installation)
-* Three themes (beta)
+* Three themes (Catppuccin/Ultradark/Transparent)
 * Quick, smooth animations and window switching
 * Hyprlock greeter
 # Photo gallery:
