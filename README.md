@@ -5,7 +5,8 @@
 * Quick, smooth animations and window switching
 * Hyprlock greeter
 
-![GitHub last commit](https://img.shields.io/github/last-commit/JwpAT/hypr)
+![Last Commit](https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7)
+
 
 # Photo gallery:
 ## Themes:
