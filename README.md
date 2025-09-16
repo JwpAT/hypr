@@ -1,10 +1,10 @@
 # *Jwp's Hypr Dots*
 ### For Arch Linux
 ### Features:
-  ### Local LLM support (Option in installation)
-  ### catppuccin-themed applications
-  ### quick, smooth animations and window switching
-  ### hyprlock greeter
+* Local LLM support (Option in installation)
+* Three themes (beta)
+* Quick, smooth animations and window switching
+* Hyprlock greeter
 # Photo gallery:
 ## Themes:
 | Catppuccin | Transparent |
