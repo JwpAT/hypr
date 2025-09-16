@@ -1,11 +1,5 @@
 # *Jwp's Hypr Dots*
 ### For Arch Linux
-## Installation steps: (*Only compatible with minimal Arch installation*)
-   ``` git clone https://github.com/jwpat/hypr.git ```
-   
-   ``` chmod +x /hypr/install.sh ```
-   
-   ``` hypr/install.sh ```
 ### Features:
   ### Local LLM support (Option in installation)
   ### catppuccin-themed applications
@@ -26,5 +20,12 @@
 | Bongo Cat interacts with keyboard input!| Clean, Simple logout menu |
 |-----------------------------------------|---------------------------|
 ![Bongo Cat interacts with keyboard input!](https://github.com/JwpAT/hypr/blob/592ada4b6946f6422d93f4a80abad900706b2cde/readme/bongocat.gif) | ![Clean & simple logout menu](https://github.com/JwpAT/hypr/blob/592ada4b6946f6422d93f4a80abad900706b2cde/readme/wlogout.gif) | 
+
+## Installation steps: (*Only compatible with minimal Arch installation*)
+   ``` git clone https://github.com/jwpat/hypr.git ```
+   
+   ``` chmod +x /hypr/install.sh ```
+   
+   ``` hypr/install.sh ```
 
   
