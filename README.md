@@ -26,9 +26,13 @@
 ![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) |
 
 ### Extras ;)
+<div align="center">
+   
 | Bongo Cat interacts with keyboard input!| Clean & Simple logout menu |
 |-----------------------------------------|---------------------------|
 ![BongoCat](https://github.com/JwpAT/hypr/blob/592ada4b6946f6422d93f4a80abad900706b2cde/readme/bongocat.gif) | ![Wlogout menu](https://github.com/JwpAT/hypr/blob/592ada4b6946f6422d93f4a80abad900706b2cde/readme/wlogout.gif) | 
+
+</div>
 
 ## Installation steps: (*Only compatible with minimal Arch installation*)
    ``` git clone https://github.com/jwpat/hypr.git ```
