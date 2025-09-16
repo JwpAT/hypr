@@ -22,4 +22,9 @@
 |-----------|
 ![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) |
 
+### Extras ;)
+| Bongo Cat interacts with keyboard input!| Clean, Simple logout menu |
+|-----------------------------------------|---------------------------|
+![Bongo Cat interacts with keyboard input!](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/bongocat.gif) | ![Clean & simple logout menu](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/wlogout.gif) | 
+
   
