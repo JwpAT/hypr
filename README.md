@@ -1,12 +1,8 @@
 # *Jwp's Hypr Dots* 
 <div align="center">
-
-![Last Commit](https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7)
-&nbsp;&nbsp;&nbsp;
-![Commits](https://img.shields.io/github/commit-activity/y/JwpAT/hypr?style=for-the-badge&label=COMMITS&logo=git&logoColor=white&labelColor=1f2430&color=f5a97f)
-&nbsp;&nbsp;&nbsp;
-![Repo Size](https://img.shields.io/github/repo-size/JwpAT/hypr?style=for-the-badge&label=REPO%20SIZE&logo=github&logoColor=white&labelColor=1f2430&color=a6da95)
-
+  <img src="https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7" style="margin: 0 12px;" />
+  <img src="https://img.shields.io/github/commit-activity/y/JwpAT/hypr?style=for-the-badge&label=COMMITS&logo=git&logoColor=white&labelColor=1f2430&color=f5a97f" style="margin: 0 12px;" />
+  <img src="https://img.shields.io/github/repo-size/JwpAT/hypr?style=for-the-badge&label=REPO%20SIZE&logo=github&logoColor=white&labelColor=1f2430&color=a6da95" style="margin: 0 12px;" />
 </div>
 
 ### Features:
