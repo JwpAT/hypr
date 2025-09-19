@@ -1,16 +1,8 @@
 # *Jwp's Hypr Dots* 
-<div align="center" style="display: flex; gap: 10px; justify-content: center;">
-  <div style="border-radius: 12px; overflow: hidden;">
-    <img src="https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7" />
-  </div>
+<div align="center"> 
 
-  <div style="border-radius: 12px; overflow: hidden;">
-    <img src="https://img.shields.io/github/commit-activity/y/JwpAT/hypr?style=for-the-badge&label=COMMITS&logo=git&logoColor=white&labelColor=1f2430&color=f5a97f" />
-  </div>
-
-  <div style="border-radius: 12px; overflow: hidden;">
-    <img src="https://img.shields.io/github/repo-size/JwpAT/hypr?style=for-the-badge&label=REPO%20SIZE&logo=github&logoColor=white&labelColor=1f2430&color=a6da95" />
-  </div>
+  ![Last Commit](https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7) ![Commits](https://img.shields.io/github/commit-activity/y/JwpAT/hypr?style=for-the-badge&label=COMMITS&logo=git&logoColor=white&labelColor=1f2430&color=f5a97f) ![Repo Size](https://img.shields.io/github/repo-size/JwpAT/hypr?style=for-the-badge&label=REPO%20SIZE&logo=github&logoColor=white&labelColor=1f2430&color=a6da95) 
+  
 </div>
 
 ### Features:
