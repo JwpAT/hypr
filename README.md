@@ -33,7 +33,7 @@
 
 </div>
 
-## Installation steps: (*Only compatible with minimal Arch installation*)
+## Installation steps: (*Only compatible with minimal Arch/Arch-based installation*)
    ``` git clone https://github.com/jwpat/hypr.git ```
    
    ``` chmod +x ~/hypr/install.sh ```
