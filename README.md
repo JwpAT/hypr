@@ -13,7 +13,7 @@
 * Quick, smooth animations and window switching
 * Hyprlock greeter
 
-## *Photo gallery:*
+## *Photo gallery*
 ## Themes:
 | Catppuccin | Transparent |
 |------------|-------------|
@@ -33,7 +33,7 @@
 
 </div>
 
-## Installation steps: (*Only compatible with minimal Arch/Arch-based installation*)
+## Installation steps (*Only compatible with minimal Arch/Arch-based installation*)
    ``` git clone https://github.com/jwpat/hypr.git ```
    
    ``` chmod +x ~/hypr/install.sh ```
