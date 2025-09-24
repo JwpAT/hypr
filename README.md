@@ -13,7 +13,7 @@
 * Quick, smooth animations and window switching
 * Hyprlock greeter
 
-# Photo gallery:
+## *Photo gallery:*
 ## Themes:
 | Catppuccin | Transparent |
 |------------|-------------|
