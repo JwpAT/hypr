@@ -85,6 +85,7 @@ button:hover {
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+	border-radius: 7px;
 }
 
 #workspaces button.visible {
