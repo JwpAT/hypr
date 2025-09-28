@@ -23,8 +23,16 @@ weather=$(curl -sf "$API_URL?$query&appid=$API_KEY&units=$UNITS")
 if [ -n "$weather" ] && ! echo "$weather" | jq -e '.cod=="401"' >/dev/null; then
     temp=$(echo "$weather" | jq '.main.temp' | cut -d. -f1)
     condition=$(echo "$weather" | jq -r '.weather[0].main')
+    icon_code=$(echo "$weather" | jq -r '.weather[0].icon') # e.g. "01n", "01d"
+
     case $condition in
-        Clear) icon="☀️" ;;
+        Clear)
+            if [[ $icon_code == *"n" ]]; then
+                icon="🌙"  # night clear
+            else
+                icon="☀️"  # day clear
+            fi
+            ;;
         Clouds) icon="☁️" ;;
         Rain) icon="🌧️" ;;
         Drizzle) icon="🌦️" ;;
@@ -33,6 +41,7 @@ if [ -n "$weather" ] && ! echo "$weather" | jq -e '.cod=="401"' >/dev/null; then
         Mist|Fog|Haze|Smoke) icon="🌫️" ;;
         *) icon="🌈" ;;
     esac
+
     echo "$icon $temp$SYMBOL"
 else
     echo "Weather unavailable"
