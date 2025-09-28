@@ -1,6 +1,9 @@
 #!/bin/bash
 
-API_KEY="84db87b07e392c4cb5d9cd4ee8978f6d"
+# Keys
+API_KEY="84db87b07e392c4cb5d9cd4ee8978f6d"   # OpenWeatherMap
+IPINFO_TOKEN="dd436c97055f22"                # ipinfo.io token
+
 CITY=""   # leave blank for auto location
 UNITS="imperial"  # metric or imperial
 SYMBOL="°F"; [ "$UNITS" = "metric" ] && SYMBOL="°C"
@@ -11,7 +14,8 @@ API_URL="https://api.openweathermap.org/data/2.5/weather"
 if [ -n "$CITY" ]; then
     query="q=$CITY"
 else
-    loc=$(curl -sf https://ipinfo.io/json | jq -r '.loc')
+    # add ?token=YOURTOKEN to avoid rate limiting
+    loc=$(curl -sf "https://ipinfo.io/json?token=$IPINFO_TOKEN" | jq -r '.loc')
     IFS=, read -r lat lon <<<"$loc"
     query="lat=$lat&lon=$lon"
 fi
