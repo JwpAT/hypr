@@ -69,10 +69,10 @@
                 "on-click": "kitty -e cava"
     },
     "custom/spotify": {
-    "exec": "/usr/bin/python3 ~/.config/scripts/mediaplayer.py --player spotify",
+    "exec": "/usr/bin/python3 ~/.config/scripts/mediaplayer.py --player ncspot",
     "format": "{}  ",
     "return-type": "json",
-    "on-click": "playerctl --player spotify play-pause",
+    "on-click": "playerctl --player ncspot play-pause",
     "on-double-click": "playerctl next",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
