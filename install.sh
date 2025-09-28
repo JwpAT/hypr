@@ -67,7 +67,7 @@ chmod +x ~/hypr/install/scripts/firefox.sh
 ~/hypr/install/scripts/firefox.sh
 
 cp -r ~/hypr/install/applications ~/.local/share/
-chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop
+chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop ~/.local/share/applications/ncspot.desktop
 
 cp -r ~/hypr/config/* ~/.config/
 
