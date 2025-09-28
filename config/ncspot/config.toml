@@ -1,0 +1,19 @@
+[theme]
+background = "none"
+primary = "#FFFFFF"
+secondary = "#000000"
+title = "#00BAFF"
+playing = "#00BAFF"
+playing_selected = "#00BAFF"
+playing_bg = "#000000"
+highlight = "#00BAFF"
+highlight_bg = "#000000"
+error = "#FFE4E4"
+error_bg = "#A50000"
+statusbar = "#000000"
+statusbar_progress = "#00BAFF"
+statusbar_bg = "#47555B"
+cmdline = "#CBFFDE"
+cmdline_bg = "none"
+
+
