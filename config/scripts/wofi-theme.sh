@@ -8,7 +8,7 @@
     OPTIONS="catppuccin\ntransparent\nultradark"
 
     # Show Wofi menu and get selection
-    CHOICE=$(echo -e "$OPTIONS" | wofi --dmenu --prompt "Select Waybar Theme:")
+    CHOICE=$(echo -e "$OPTIONS" | wofi --dmenu --prompt "Select Theme:")
 
     # Run the switch script based on selection
     case "$CHOICE" in
