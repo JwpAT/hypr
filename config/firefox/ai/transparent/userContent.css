@@ -1,25 +1,53 @@
-/* Make ChatGPT background fully transparent (your base) */
+/* Transparent ChatGPT Theme */
 @-moz-document domain("chatgpt.com") {
-  html, body { background: transparent !important; }
 
-  /* Sidebar */
-  .sticky.left-0, nav, aside {
+  /* Global Background */
+  html, body {
     background: transparent !important;
   }
 
-  /* Top bar */
-  header, .sticky.top-0 {
-    background: transparent !important;
-  }
-
-  /* Bottom faded bar */
+  /* Top & Bottom Bars */
+  header,
+  .sticky.top-0,
   .sticky.bottom-0,
   .absolute.bottom-0,
   footer {
     background: transparent !important;
   }
 
-  /* Remove blur/fade effects if any */
+  /* Sidebar */
+  .bg-token-bg-elevated-secondary {
+    background: transparent !important;
+  }
+
+  /* Extras */
+  .border-token-border-light,
+  .composer-secondary-button-color {
+    background: rgba(0, 0, 0, 0.2) !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Input Bar */
+  form.group\/composer .bg-token-bg-primary,
+  form.group\/composer [style*="border-radius: 28px"],
+  form.group\/composer [class*="dark:bg"][class*="#303030"] {
+    background: rgba(0, 0, 0, 0.2) !important;
+    background-image: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 28px !important;
+  }
+
+  /* Popovers / Menus */
+  [role="menu"],
+  [data-radix-popper-content-wrapper] > div,
+  [class*="popover"],
+  [class*="dropdown"] {
+    background: rgba(0, 0, 0, 0.8)!important;
+    border-radius: 10px !important;
+  }
+
+  /* Remove Default Fades / Blurs */
   .backdrop-blur,
   .bg-gradient-to-t,
   .bg-gradient-to-b {
@@ -27,11 +55,7 @@
     backdrop-filter: none !important;
   }
 
-  /* ---------- EXTRA FIXES (bottom gradient + sidebar) ---------- */
-
-  /* 1) Kill the thread-bottom gradient, masks, and shadows */
-
-  /* Some fades come from pseudo-elements */
+  /* Kill Thread Bottom Gradient */
   #thread-bottom-container::before,
   #thread-bottom-container::after,
   #thread-bottom::before,
@@ -41,5 +65,13 @@
     box-shadow: none !important;
     mask: none !important;
     -webkit-mask: none !important;
+  }
+
+    /* Profile/account block at bottom of sidebar */
+  .sticky.bottom-0.z-30,
+  .sticky.bottom-0.z-30 * {
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
   }
 }
