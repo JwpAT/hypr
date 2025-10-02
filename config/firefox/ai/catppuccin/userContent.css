@@ -1,7 +1,8 @@
 /* ChatGPT custom theme */
 @-moz-document domain("chatgpt.com") {
   /* Base background */
-  html, body {
+  html, body,
+  .bg-token-main-surface-primary {
     background-color: #181825 !important;
   }
 
@@ -18,6 +19,11 @@
     background-color: #181825 !important;
     background-image: none !important;
     backdrop-filter: none !important;
+  }
+
+  /* Voice button */
+  .composer-secondary-button-color {
+    background-color: #181825 !important;
   }
 
   /* Remove blur/fade effects */
