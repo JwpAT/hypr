@@ -1,0 +1,18 @@
+[general]
+
+; mode = normal
+; framerate = 60
+
+ bars = 0
+ bar_width = 4
+
+
+[color]
+
+ gradient = 20
+ gradient_color_1 = '#ffffff'
+ gradient_color_2 = '#ffffff'
+
+ horizontal_gradient = 1
+ horizontal_gradient_color_1 = '#ffffff'
+ horizontal_gradient_color_2 = '#ffffff'
