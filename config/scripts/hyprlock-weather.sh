@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Keys
+# Key
 API_KEY="84db87b07e392c4cb5d9cd4ee8978f6d"   # OpenWeatherMap
-IPINFO_TOKEN="dd436c97055f22"                # ipinfo.io token
 
 CITY=""   # leave blank for auto location
 UNITS="imperial"  # metric or imperial
