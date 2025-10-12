@@ -11,10 +11,18 @@ API_URL="https://api.openweathermap.org/data/2.5/weather"
 if [ -n "$CITY" ]; then
     query="q=$CITY"
 else
-    # Free IP-based geolocation (city-level, unlimited)
-    loc=$(curl -sf "http://ip-api.com/json")
-    lat=$(echo "$loc" | jq -r '.lat')
-    lon=$(echo "$loc" | jq -r '.lon')
+    # Use FreeIPAPI (fast, no key required, ~60 req/min)
+    loc=$(curl -sf "https://freeipapi.com/api/json")
+    lat=$(echo "$loc" | jq -r '.latitude')
+    lon=$(echo "$loc" | jq -r '.longitude')
+
+    # fallback if null or error
+    if [ -z "$lat" ] || [ "$lat" = "null" ]; then
+        echo "FreeIPAPI failed, using cached or default location" >&2
+        lat="40.7128"  # fallback (NYC)
+        lon="-74.0060"
+    fi
+
     query="lat=$lat&lon=$lon"
 fi
 
