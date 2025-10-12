@@ -47,5 +47,4 @@ if [ -n "$weather" ] && ! echo "$weather" | jq -e '.cod=="401"' >/dev/null; then
 
     echo "$icon $temp$SYMBOL"
 else
-    echo ""  # hides output if unavailable
-fi
+    echo "Weather unavailable" 
