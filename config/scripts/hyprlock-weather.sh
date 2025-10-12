@@ -1,31 +1,32 @@
 #!/bin/bash
 
-# Key
+# --- CONFIG ---
 API_KEY="84db87b07e392c4cb5d9cd4ee8978f6d"   # OpenWeatherMap
-
-CITY=""   # leave blank for auto location
-UNITS="imperial"  # metric or imperial
+CITY=""                                       # leave blank for auto location
+UNITS="imperial"                              # "metric" or "imperial"
 SYMBOL="°F"; [ "$UNITS" = "metric" ] && SYMBOL="°C"
-
 API_URL="https://api.openweathermap.org/data/2.5/weather"
 
-# Get location (lat,lon if CITY not set)
+# --- GET LOCATION (lat/lon if CITY not set) ---
 if [ -n "$CITY" ]; then
     query="q=$CITY"
 else
-    loc=$(curl -sf "https://ipinfo.io/json?token=$IPINFO_TOKEN" | jq -r '.loc')
-    IFS=, read -r lat lon <<<"$loc"
+    # Free IP-based geolocation (city-level, unlimited)
+    loc=$(curl -sf "http://ip-api.com/json")
+    lat=$(echo "$loc" | jq -r '.lat')
+    lon=$(echo "$loc" | jq -r '.lon')
     query="lat=$lat&lon=$lon"
 fi
 
-# Fetch weather
+# --- FETCH WEATHER ---
 weather=$(curl -sf "$API_URL?$query&appid=$API_KEY&units=$UNITS")
 
-# Get battery info
-battery_percent=$(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null)
-battery_status=$(cat /sys/class/power_supply/BAT0/status 2>/dev/null)
+# --- BATTERY INFO ---
+battery_path="/sys/class/power_supply/BAT0"
+battery_percent=$(cat "$battery_path/capacity" 2>/dev/null)
+battery_status=$(cat "$battery_path/status" 2>/dev/null)
 
-# Determine battery icon and format
+# --- BATTERY ICON / COLOR ---
 if [[ "$battery_status" == "Charging" ]]; then
     battery_icon="<span color='#85eb81'>${battery_percent}% &#160;</span>"
 else
@@ -40,7 +41,7 @@ else
     fi
 fi
 
-# Parse & print weather + battery
+# --- PARSE WEATHER + PRINT ---
 if [ -n "$weather" ] && ! echo "$weather" | jq -e '.cod=="401"' >/dev/null; then
     temp=$(echo "$weather" | jq '.main.temp' | cut -d. -f1)
     condition=$(echo "$weather" | jq -r '.weather[0].main')
