@@ -6,16 +6,16 @@ API_KEY="84db87b07e392c4cb5d9cd4ee8978f6d"   # OpenWeatherMap
 CITY=""   # leave blank for auto location
 UNITS="imperial"  # metric or imperial
 SYMBOL="°F"; [ "$UNITS" = "metric" ] && SYMBOL="°C"
-
 API_URL="https://api.openweathermap.org/data/2.5/weather"
 
 # Get location (lat,lon if CITY not set)
 if [ -n "$CITY" ]; then
     query="q=$CITY"
 else
-    # add ?token=YOURTOKEN to avoid rate limiting
-    loc=$(curl -sf "https://ipinfo.io/json" | jq -r '.loc')
-    IFS=, read -r lat lon <<<"$loc"
+    # free IP-based geolocation (city-level, no API key or limit issues)
+    loc=$(curl -sf "http://ip-api.com/json")
+    lat=$(echo "$loc" | jq -r '.lat')
+    lon=$(echo "$loc" | jq -r '.lon')
     query="lat=$lat&lon=$lon"
 fi
 
@@ -47,5 +47,5 @@ if [ -n "$weather" ] && ! echo "$weather" | jq -e '.cod=="401"' >/dev/null; then
 
     echo "$icon $temp$SYMBOL"
 else
-    echo "Weather unavailable"
+    echo ""  # hides output if unavailable
 fi
