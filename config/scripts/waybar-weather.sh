@@ -45,6 +45,7 @@ if [ -n "$weather" ] && ! echo "$weather" | jq -e '.cod=="401"' >/dev/null; then
         *) icon="🌈" ;;
     esac
 
-    echo "$icon $temp$SYMBOL"
+    echo "$temp$SYMBOL $icon"
 else
-    echo "Weather unavailable" 
+    echo "Weather Unavailable"
+fi
