@@ -97,7 +97,7 @@
     "custom/weather": {
         "exec": "bash ~/.config/scripts/waybar-weather.sh",
         "on-click": "mousam",
-        "interval": 1,
+        "interval": 600,
         "tooltip": false,
         "format": "{}"
     },
