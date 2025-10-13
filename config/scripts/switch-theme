@@ -45,6 +45,20 @@ pkill -x waybar 2>/dev/null || true
 nohup waybar >/dev/null 2>&1 &
 
 # -----------------
+# Swaync
+# -----------------
+SWAYNC_CSS="$HOME/.config/swaync/style.css"
+if [ "$THEME" = "transparent" ]; then
+    sed -i "s|^@import .*|@import 'themes/transparent.css';|" "$SWAYNC_CSS"
+elif [ "$THEME" = "ultradark" ]; then
+    sed -i "s|^@import .*|@import 'themes/ultradark.css';|" "$SWAYNC_CSS"
+elif [ "$THEME" = "catppuccin" ]; then
+    sed -i "s|^@import .*|@import 'themes/catppuccin.css';|" "$SWAYNC_CSS"
+fi
+
+pkill swaync && swaync &
+
+# -----------------
 # Hyprpaper (symlink + restart)
 # -----------------
 mkdir -p "$HOME/.config/hypr"
