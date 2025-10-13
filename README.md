@@ -24,7 +24,7 @@
 |-----------|
 ![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) |
 
-### New addition - swaync - catppuccin, transparent, ultradark
+### New addition - swaync - catppuccin, transparent, ultradark - Added 2025-10-13
 | swaync |
 |--------|
 ![swaync](https://github.com/JwpAT/hypr/blob/3344fb243a5b5366e27e610e633c893d2d87687b/readme/swaync.png) |
