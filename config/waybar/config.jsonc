@@ -29,7 +29,6 @@
     // Choose the order of the modules
     "modules-left": [
     "hyprland/workspaces",
-    "network",
     "memory",
     "custom/gpt",
     "custom/weather",
@@ -44,10 +43,8 @@
 
     ],
     "modules-right": [
-        "custom/spotify",
         "pulseaudio",
-        "temperature",
-    //    "keyboard-state",
+        "custom/swaync",
         "sway/language",
         "backlight",
         "idle_inhibitor",
@@ -67,15 +64,6 @@
         "format" : " ",
                 "tooltip": false,
                 "on-click": "kitty -e cava"
-    },
-    "custom/spotify": {
-    "exec": "/usr/bin/python3 ~/.config/scripts/mediaplayer.py --player ncspot",
-    "format": "{}  ",
-    "return-type": "json",
-    "on-click": "playerctl --player ncspot play-pause",
-    "on-double-click": "playerctl next",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
     },
     "custom/waypaper": {
 	"format": " ",
@@ -97,7 +85,7 @@
     "custom/weather": {
         "exec": "bash ~/.config/scripts/waybar-weather.sh",
         "on-click": "mousam",
-        "interval": 600,
+        "interval": 3,
         "tooltip": false,
         "format": "{}"
     },
@@ -120,11 +108,12 @@
     "memory": {
         "format": "{}% "
     },
-    "temperature": {
-        "critical-threshold": 80,
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-        "format": "{}°C {icon}",
-        "format-icons": ["", "", ""]
+    "custom/swaync": {
+    "exec": "bash ~/.config/scripts/waybar-swaync.sh",
+    "interval": 1,
+    "tooltip": false,
+    "format": "{} ",
+    "on-click": "swaync-client -t"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -161,15 +150,6 @@
         "balanced": "",
         "power-saver": ""
       }
-    },
-    "network": {
-        "format-wifi": "Connected   • ",
-	"on-click": "kitty --class floatwlmenu -e bash ~/.config/scripts/wireless-menu.sh",
-        "format-ethernet": "Connected 󰈀  • ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "No Internet  "
-//      "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },	
     "pulseaudio": {
 
