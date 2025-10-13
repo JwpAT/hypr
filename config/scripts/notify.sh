@@ -69,9 +69,6 @@ msg=${messages[$RANDOM % ${#messages[@]}]}
 
 notify-send -a "CutePop" -t 8000 "💌 Daily Reminder" "$msg"
 
-# show the notification
-notify-send -t 8000 "💌 Daily Reminder" "$msg"
-
 # if the message was the smile one, open the camera
 if [[ "$msg" == "Smile at your screen right now 😄 look how adorable you are" ]]; then
     # open with cheese (simple GTK webcam app)
