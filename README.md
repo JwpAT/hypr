@@ -15,15 +15,20 @@
 
 ## *Photo gallery*
 ### Themes:
-| Catppuccin | Transparent | Ultradark |
-|------------|-------------|-----------|
+| Catppuccin | Transparent |
+|------------|-------------|
 
 | ![Catppuccin](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/catppuccin.png) | ![Transparent](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/transparent.png) | ![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) |
 
-### New theme - Ultradark - Perfect for OLED displays | added 2025/09/14
+### Ultradark - Perfect for OLED displays
 | Ultradark |
 |-----------|
 ![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) |
+
+### New addition - swaync - catppuccin, transparent, ultradark
+| swaync |
+|--------|
+![swaync](https://github.com/JwpAT/hypr/blob/3344fb243a5b5366e27e610e633c893d2d87687b/readme/swaync.png) |
 
 ### Extras ;)
 <div align="center">
