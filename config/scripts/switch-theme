@@ -56,7 +56,7 @@ elif [ "$THEME" = "catppuccin" ]; then
     sed -i "s|^@import .*|@import 'themes/catppuccin.css';|" "$SWAYNC_CSS"
 fi
 
-pkill swaync && swaync &
+swaync-client --reload-css
 
 # -----------------
 # Hyprpaper (symlink + restart)
