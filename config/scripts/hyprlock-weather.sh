@@ -1,40 +1,22 @@
 #!/bin/bash
 
-# --- CONFIG ---
-API_KEY="84db87b07e392c4cb5d9cd4ee8978f6d"   # OpenWeatherMap
-CITY=""                                       # leave blank for auto location
-UNITS="imperial"                              # "metric" or "imperial"
+UNITS="imperial"
 SYMBOL="°F"; [ "$UNITS" = "metric" ] && SYMBOL="°C"
-API_URL="https://api.openweathermap.org/data/2.5/weather"
+API_URL="https://api.open-meteo.com/v1/forecast"
 
-# --- GET LOCATION (lat/lon if CITY not set) ---
-if [ -n "$CITY" ]; then
-    query="q=$CITY"
-else
-    # Use FreeIPAPI (fast, no key required, ~60 req/min)
-    loc=$(curl -sf "https://freeipapi.com/api/json")
-    lat=$(echo "$loc" | jq -r '.latitude')
-    lon=$(echo "$loc" | jq -r '.longitude')
+# get loc
+loc=$(curl -sf "https://free.freeipapi.com/api/json")
+lat=$(echo "$loc" | jq -r '.latitude')
+lon=$(echo "$loc" | jq -r '.longitude')
 
-    # fallback if null or error
-    if [ -z "$lat" ] || [ "$lat" = "null" ]; then
-        echo "FreeIPAPI failed, using cached or default location" >&2
-        lat="40.7128"  # fallback (NYC)
-        lon="-74.0060"
-    fi
+weather=$(curl -sf "$API_URL?latitude=$lat&longitude=$lon&current=temperature_2m,weather_code,is_day&temperature_unit=$( [ "$UNITS" = "metric" ] && echo "celsius" || echo "fahrenheit" )&timezone=auto")
 
-    query="lat=$lat&lon=$lon"
-fi
-
-# --- FETCH WEATHER ---
-weather=$(curl -sf "$API_URL?$query&appid=$API_KEY&units=$UNITS")
-
-# --- BATTERY INFO ---
+# batt info
 battery_path="/sys/class/power_supply/BAT0"
 battery_percent=$(cat "$battery_path/capacity" 2>/dev/null)
 battery_status=$(cat "$battery_path/status" 2>/dev/null)
 
-# --- BATTERY ICON / COLOR ---
+# batt icon
 if [[ "$battery_status" == "Charging" ]]; then
     battery_icon="<span color='#85eb81'>${battery_percent}% &#160;</span>"
 else
@@ -49,26 +31,26 @@ else
     fi
 fi
 
-# --- PARSE WEATHER + PRINT ---
-if [ -n "$weather" ] && ! echo "$weather" | jq -e '.cod=="401"' >/dev/null; then
-    temp=$(echo "$weather" | jq '.main.temp' | cut -d. -f1)
-    condition=$(echo "$weather" | jq -r '.weather[0].main')
-    icon_code=$(echo "$weather" | jq -r '.weather[0].icon')
+# display
+if [ -n "$weather" ] && echo "$weather" | jq -e '.current' >/dev/null 2>&1; then
+    temp=$(echo "$weather" | jq '.current.temperature_2m' | cut -d. -f1)
+    code=$(echo "$weather" | jq '.current.weather_code')
+    is_day=$(echo "$weather" | jq '.current.is_day')
 
-    case $condition in
-        Clear)
-            if [[ $icon_code == *"n" ]]; then
-                icon="🌙"
-            else
+    case $code in
+        0)
+            if [ "$is_day" -eq 1 ]; then
                 icon="☀️"
+            else
+                icon="🌙"
             fi
             ;;
-        Clouds) icon="☁️" ;;
-        Rain) icon="🌧️" ;;
-        Drizzle) icon="🌦️" ;;
-        Thunderstorm) icon="⛈️" ;;
-        Snow) icon="❄️" ;;
-        Mist|Fog|Haze|Smoke) icon="🌫️" ;;
+        1|2|3) icon="⛅" ;;
+        45|48) icon="🌫️" ;;
+        51|53|55|61|63|65|80|81|82) icon="🌧️" ;;
+        56|57|66|67) icon="🌦️" ;;
+        71|73|75|77|85|86) icon="❄️" ;;
+        95|96|99) icon="⛈️" ;;
         *) icon="🌈" ;;
     esac
 
