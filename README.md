@@ -27,7 +27,7 @@
 ### New addition - swaync - catppuccin, transparent, ultradark - Added 2025-10-13
 | swaync |
 |--------|
-![swaync](https://github.com/JwpAT/hypr/blob/3344fb243a5b5366e27e610e633c893d2d87687b/readme/swaync.png) |
+![swaync](https://github.com/JwpAT/hypr/blob/326c9c92529088e632695f2528807085f67a23d2/readme/swaync-themes.png) |
 
 ### Extras ;)
 <div align="center">
