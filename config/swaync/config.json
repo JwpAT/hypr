@@ -94,7 +94,7 @@
         {
           "label": "󰹑",
           "type": "button",
-          "command": "swaync-client --close-panel && sleep 0.7 && grim -g $(slurp)"
+          "command": "bash ~/.config/scripts/swaync-shot.sh"
         },
         {
           "label": "",
