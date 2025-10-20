@@ -160,7 +160,7 @@ button:hover {
 
 #custom-gpt {
     font-size: 20px;
-        background-image: url('/home/jwp/.config/waybar/icons/openai-transparent.png');
+        background-image: url('/etc/xdg/waybar/icons/openai-transparent.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 15px 15px;
