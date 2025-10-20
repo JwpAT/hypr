@@ -38,7 +38,7 @@
 
 </div>
 
-## Keybindinga
+## Keybindings
 #### SUPER + Q: Terminal (Kitty)
 #### SUPER + C: Kill active window
 #### SUPER + E: File manager (Thunar)
