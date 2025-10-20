@@ -8,8 +8,6 @@ messages=(
   "Stay hydrated, pretty one ✨"
   "You’re enough just as you are 🫶"
   "You're AMAZING :3 💗"
-  "Be you!! 🏳️‍🌈"
-  "Who wants a hug? You do!! 😊"
   "lock in today! smile!! 😀❤️"
   "Good morning sunshine ☀️ you make the world brighter just by being in it"
   "Keep that gorgeous smile going 😘 it looks good on you"
@@ -27,7 +25,6 @@ messages=(
   "Take a deep breath cutie 🌿 you’re doing better than you think"
   "Little reminder 💌 you don’t have to do everything today to be worthy"
   "Drink some water 💧 stretch your shoulders 🤸 your body thanks you"
-  "Your queerness is magical 🏳️‍🌈✨ carry it proudly today"
   "Even small steps are still forward progress 🌱 keep going"
   "Someone out there smiles just because you exist 😄💖"
   "Rest is not lazy, it’s care — and you deserve it 🛏️"
@@ -55,7 +52,6 @@ messages=(
   "You radiate kindness 💕 and the world feels it every day."
   "Even if today feels heavy 🪨, you are still golden inside."
   "Hi bestie 👋 drink some water, unclench that jaw, stretch it out."
-  "Remember: queer joy is resistance 🏳️‍🌈💫 keep glowing."
   "Good night angel 🌙💤 your dreams deserve to be sweet."
   "Little dance break 💃 your body loves when you move."
   "You’re not behind, you’re not late ⏰ you’re exactly where you need to be."
@@ -68,13 +64,3 @@ messages=(
 msg=${messages[$RANDOM % ${#messages[@]}]}
 
 notify-send -a "CutePop" -t 8000 "💌 Daily Reminder" "$msg"
-
-# if the message was the smile one, open the camera
-if [[ "$msg" == "Smile at your screen right now 😄 look how adorable you are" ]]; then
-    # open with cheese (simple GTK webcam app)
-    sleep 3
-    snapshot &
-
-    # or, if you prefer mpv snapshot mode:
-    # mpv av://v4l2:/dev/video0 --profile=low-latency --untimed --no-terminal --geometry=30%:30% &
-fi
