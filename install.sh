@@ -77,6 +77,9 @@ $(command -v cp) $HOME/.config/wlogout/themes/*/style.css /usr/share/wlogout/sty
 $(command -v rm) -rf /usr/share/wlogout/icons" \
 | sudo tee /etc/sudoers.d/wlogout-theme >/dev/null
 
+sudo cp -r ~/hypr/install/waybar/icons /etc/xdg/waybar/
+cp -r ~/hypr/install/scripts/update.sh ~/
+
 sudo chmod 440 /etc/sudoers.d/wlogout-theme
 sudo visudo -cf /etc/sudoers.d/wlogout-theme
 
