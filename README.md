@@ -38,6 +38,14 @@
 
 </div>
 
+## Keybindinga
+#### SUPER + Q: Terminal (Kitty)
+#### SUPER + C: Kill active window
+#### SUPER + E: File manager (Thunar)
+#### SUPER + A: Application Launcher
+#### SUPER + W: Theme Switcher
+#### SUPER + (1-9): Switch Workspace
+
 ## Installation steps (*Only compatible with minimal Arch/Arch-based installation*)
    ``` git clone https://github.com/jwpat/hypr.git ```
    
