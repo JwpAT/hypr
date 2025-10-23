@@ -38,6 +38,7 @@
 
 </div>
 
+
 ## Keybindings
 #### SUPER + Q: Terminal (Kitty)
 #### SUPER + C: Kill active window
@@ -53,4 +54,37 @@
    
    ``` ./hypr/install.sh ```
 
-  
+## Directory Structure
+  ```text
+hypr/
+├── README.md
+├── install.sh
+├── packages
+├── Catppuccin-Mocha-Standard-Blue-Dark.zip
+├── config/
+│   ├── hypr/
+│   │   └── themes/
+│   ├── waybar/
+│   │   ├── icons/
+│   │   └── themes/
+│   ├── swaync/
+│   │   └── themes/
+│   ├── wlogout/
+│   │   └── themes/
+│   ├── wofi/
+│   │   └── themes/
+│   ├── kitty/
+│   │   └── themes/
+│   ├── wallpapers/
+│   ├── scripts/
+│   └── … (additional app profiles: btop, cava, fastfetch, firefox, etc.)
+├── install/
+│   ├── applications/
+│   ├── firefox/
+│   ├── scripts/
+│   └── waybar/
+│       └── icons/
+└── readme/
+    └── assets for screenshots and gifs
+```
+
