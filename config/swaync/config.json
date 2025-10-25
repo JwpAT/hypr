@@ -1,0 +1,119 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+  "control-center-margin-top": 7,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 7,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 500,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": false,
+  "relative-timestamps": true,
+  "control-center-width": 350,
+  "control-center-height": 600,
+  "notification-window-width": 350,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "No Notifications",
+  "script-fail-notify": true,
+
+  "scripts": {
+  "screenshot-action-script": {
+    "exec": "bash ~/.config/scripts/swaync/open-shot.sh open",
+    "app-name": "Screenshot",
+    "urgency": "Normal",
+    "run-on": "action"
+  }
+  },
+
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+
+  "widgets": [
+    "mpris",
+    "title",
+    "notifications",
+    "buttons-grid"
+  ],
+
+  "widget-config": {
+    "notifications": {
+      "vexpand": true
+    },
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Clear All",
+      "clear-all-button": true
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "label": {
+      "max-lines": 5,
+      "text": "Label Text"
+    },
+    "mpris": {
+      "blacklist": [],
+      "autohide": false,
+      "show-album-art": "always",
+      "loop-carousel": false
+    },
+    "buttons-grid": {
+      "buttons-per-row": 5,
+      "actions": [
+        {
+          "label": "",
+          "type": "button",
+          "command": "swaync-client --close-panel && sleep 0.7 && color=$(hyprpicker -a -f hex) && notify-send -a 'Hyprpicker' '🎨 Color copied!' $color"
+        },
+        {
+          "label": "󰹑",
+          "type": "button",
+          "command": "bash ~/.config/scripts/swaync/swaync-shot.sh notif"
+        },
+        {
+          "label": "",
+          "type": "button",
+          "command": "swaync-client --close-panel && kitty --class wifibt -e env -u COLORTERM TERM=xterm-old nmtui"
+        },
+        {
+          "label": "",
+          "type": "button",
+          "command": "swaync-client --close-panel && kitty --class wifibt -e bluetuith"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "sh -c 'swaync-client --toggle-dnd'",
+          "update-command": "sh -c 'out=$(swaync-client -D 2>/dev/null); [[ $out == true || $(echo \"$out\" | jq -r .doNotDisturb 2>/dev/null) == true ]] && echo true || echo false'"
+        }
+      ]
+    }
+  }
+}
