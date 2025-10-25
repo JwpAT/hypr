@@ -35,7 +35,7 @@
 
   "scripts": {
   "screenshot-action-script": {
-    "exec": "bash ~/.config/scripts/swaync/open-shot.sh open",
+    "exec": "bash ~/.config/scripts/swaync-shot.sh open",
     "app-name": "Screenshot",
     "urgency": "Normal",
     "run-on": "action"
@@ -95,7 +95,7 @@
         {
           "label": "󰹑",
           "type": "button",
-          "command": "bash ~/.config/scripts/swaync/swaync-shot.sh notif"
+          "command": "bash ~/.config/scripts/swaync-shot.sh notif"
         },
         {
           "label": "",
