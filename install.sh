@@ -96,12 +96,8 @@ chmod +x ~/.config/scripts/*.sh ~/.config/scripts/switch-theme ~/.local/bin/togg
 
 sudo usermod -a -G input $USER
 
-if [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
-  ~/.config/scripts/switch-theme transparent &
-else
-  echo ">>> No D-Bus session detected — running theme switch in background (won't wait)."
-  nohup ~/.config/scripts/switch-theme transparent >/dev/null 2>&1 &
-fi
+chmod +x ~/hypr/install/scripts/set-theme
+~/hypr/install/scripts/set-theme transparent
 
 chmod +x ~/hypr/install/scripts/install-complete.sh
 ~/hypr/install/scripts/install-complete.sh
