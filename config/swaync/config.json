@@ -85,7 +85,7 @@
       "loop-carousel": false
     },
     "buttons-grid": {
-      "buttons-per-row": 5,
+      "buttons-per-row": 6,
       "actions": [
         {
           "label": "",
@@ -93,12 +93,12 @@
           "command": "swaync-client --close-panel && sleep 0.7 && color=$(hyprpicker -a -f hex) && notify-send -a 'Hyprpicker' '🎨 Color copied!' $color"
         },
         {
-          "label": "󰹑",
+          "label": "",
           "type": "button",
           "command": "bash ~/.config/scripts/swaync-shot.sh notif"
         },
         {
-          "label": "",
+          "label": " ",
           "type": "button",
           "command": "swaync-client --close-panel && kitty --class wifibt -e env -u COLORTERM TERM=xterm-old nmtui"
         },
@@ -106,6 +106,12 @@
           "label": "",
           "type": "button",
           "command": "swaync-client --close-panel && kitty --class wifibt -e bluetuith"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "bash -c $HOME/.config/scripts/caffeine.sh",
+          "update-command": "bash -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && $HOME/.config/scripts/caff_update.sh'"
         },
         {
           "label": "",
