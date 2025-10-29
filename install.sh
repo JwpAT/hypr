@@ -66,10 +66,9 @@ echo "Running Firefox setup..."
 chmod +x ~/hypr/install/scripts/firefox.sh
 ~/hypr/install/scripts/firefox.sh
 
-chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop ~/.local/share/applications/ncspot.desktop
-
 cp -r ~/hypr/config/* ~/.config/
 cp -r ~/hypr/local/* ~/.local/
+chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop ~/.local/share/applications/ncspot.desktop
 
 echo "$USER ALL=(ALL) NOPASSWD: \
 $(command -v cp) -r $HOME/.config/wlogout/themes/*/icons /usr/share/wlogout/icons, \
