@@ -1,0 +1,9 @@
+#!/bin/bash
+
+WHAT="${1:-idle}"
+
+if pgrep -f "systemd-inhibit --what=$WHAT sleep infinity" >/dev/null; then
+    pkill -f "systemd-inhibit --what=$WHAT sleep infinity"
+else
+    nohup systemd-inhibit --what="$WHAT" sleep infinity >/dev/null 2>&1 &
+fi
