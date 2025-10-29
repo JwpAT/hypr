@@ -85,8 +85,9 @@
     "custom/weather": {
         "exec": "bash ~/.config/scripts/waybar-weather.sh",
         "on-click": "mousam",
-        "interval": 3,
+        "interval": 600,
         "tooltip": false,
+        "signal": 3,
         "format": "{}"
     },
     "idle_inhibitor": {
