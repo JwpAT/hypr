@@ -70,6 +70,7 @@ cp -r ~/hypr/install/applications ~/.local/share/
 chmod +x ~/.local/share/applications/openwebui.desktop ~/.local/share/applications/chatgpt.desktop ~/.local/share/applications/ncspot.desktop
 
 cp -r ~/hypr/config/* ~/.config/
+cp -r ~/hypr/local/* ~/.local/
 
 echo "$USER ALL=(ALL) NOPASSWD: \
 $(command -v cp) -r $HOME/.config/wlogout/themes/*/icons /usr/share/wlogout/icons, \
@@ -93,7 +94,7 @@ unzip -o ~/.config/wallpapers/ultradark.zip -d ~/.config/wallpapers/
 echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
-chmod +x ~/.config/scripts/*.sh ~/.config/scripts/switch-theme
+chmod +x ~/.config/scripts/*.sh ~/.config/scripts/switch-theme ~/.local/bin/toggle_caffeine
 
 sudo usermod -a -G input $USER
 
