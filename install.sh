@@ -89,14 +89,19 @@ unzip -o ~/.config/wallpapers/transparent.zip -d ~/.config/wallpapers/
 unzip -o ~/.config/wallpapers/catppuccin.zip -d ~/.config/wallpapers/
 unzip -o ~/.config/wallpapers/ultradark.zip -d ~/.config/wallpapers/
 
-#echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
-#source ~/.bashrc
+echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 
 chmod +x ~/.config/scripts/*.sh ~/.config/scripts/switch-theme ~/.local/bin/toggle_caffeine
 
 sudo usermod -a -G input $USER
 
-~/.config/scripts/switch-theme transparent
+if [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  ~/.config/scripts/switch-theme transparent &
+else
+  echo ">>> No D-Bus session detected — running theme switch in background (won't wait)."
+  nohup ~/.config/scripts/switch-theme transparent >/dev/null 2>&1 &
+fi
 
 chmod +x ~/hypr/install/scripts/install-complete.sh
 ~/hypr/install/scripts/install-complete.sh
