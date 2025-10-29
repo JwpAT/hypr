@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=ChatGPT
-Comment=Launches OpenWebUI script
-Exec=firefox -P ai --new-window https://chatgpt.com/
-Icon=utilities-terminal
-Terminal=false
-Type=Application
-Categories=Utility;

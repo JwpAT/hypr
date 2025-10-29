@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=ncspot
-Comment=Launches ncspot
-Exec=sh -c "kitty -e ncspot"
-Icon=utilities-terminal
-Terminal=false
-Type=Application
-Categories=Utility;
