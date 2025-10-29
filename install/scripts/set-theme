@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+# usage: walltheme <catppuccin|transparent|ultradark>
+
+set -e
+THEME="$1"
+
+# -----------------
+# Hyprland
+# -----------------
+HYPRLAND_CONF="$HOME/.config/hypr/theme.conf"
+case "$THEME" in
+  transparent)
+    sed -i "s|^source=.*|source=./themes/hyprland/transparent.conf|" "$HYPRLAND_CONF"
+    ;;
+  catppuccin)
+    sed -i "s|^source=.*|source=./themes/hyprland/catppuccin.conf|" "$HYPRLAND_CONF"
+    ;;
+  ultradark)
+    sed -i "s|^source=.*|source=./themes/hyprland/ultradark.conf|" "$HYPRLAND_CONF"
+    ;;
+esac
+
+
+# -----------------
+# Waypaper
+# -----------------
+ln -sf "$HOME/.config/waypaper/themes/$THEME/config.ini" \
+       "$HOME/.config/waypaper/config.ini"
+
+# -----------------
+# Waybar
+# -----------------
+WAYBAR_CSS="$HOME/.config/waybar/style.css"
+if [ "$THEME" = "transparent" ]; then
+    sed -i "s|^@import .*|@import 'themes/transparent.css';|" "$WAYBAR_CSS"
+elif [ "$THEME" = "ultradark" ]; then
+    sed -i "s|^@import .*|@import 'themes/ultradark.css';|" "$WAYBAR_CSS"
+elif [ "$THEME" = "catppuccin" ]; then
+    sed -i "s|^@import .*|@import 'themes/catppuccin.css';|" "$WAYBAR_CSS"
+fi
+
+# -----------------
+# Swaync
+# -----------------
+SWAYNC_CSS="$HOME/.config/swaync/style.css"
+if [ "$THEME" = "transparent" ]; then
+    sed -i "s|^@import .*|@import 'themes/transparent.css';|" "$SWAYNC_CSS"
+elif [ "$THEME" = "ultradark" ]; then
+    sed -i "s|^@import .*|@import 'themes/ultradark.css';|" "$SWAYNC_CSS"
+elif [ "$THEME" = "catppuccin" ]; then
+    sed -i "s|^@import .*|@import 'themes/catppuccin.css';|" "$SWAYNC_CSS"
+fi
+
+# -----------------
+# Hyprpaper (symlink + restart)
+# -----------------
+mkdir -p "$HOME/.config/hypr"
+HP_THEME_CONF="$HOME/.config/hypr/themes/hyprpaper/$THEME/hyprpaper.conf"
+HP_ACTIVE_CONF="$HOME/.config/hypr/hyprpaper.conf"
+ln -sfn "$HP_THEME_CONF" "$HP_ACTIVE_CONF"
+
+# -----------------
+# Hyprlock
+# -----------------
+ln -sf "$HOME/.config/hypr/themes/hyprlock/$THEME/hyprlock.conf" \
+       "$HOME/.config/hypr/hyprlock.conf"
+
+# -----------------
+# Wlogout
+# -----------------
+WLOGOUT_DIR="$HOME/.config/wlogout/themes/$THEME"
+if [ -d "$WLOGOUT_DIR" ]; then
+    mkdir -p "$HOME/.config/wlogout"
+    ln -sf "$WLOGOUT_DIR/style.css" "$HOME/.config/wlogout/style.css"
+    sudo rm -rf /usr/share/wlogout/icons
+    sudo cp -r "$WLOGOUT_DIR/icons" /usr/share/wlogout/icons
+fi
+
+# -----------------
+# Wofi
+# -----------------
+WOFI_DIR="$HOME/.config/wofi/themes/$THEME"
+if [ -d "$WOFI_DIR" ]; then
+    mkdir -p "$HOME/.config/wofi"
+    ln -sf "$WOFI_DIR/style.css" "$HOME/.config/wofi/style.css"
+fi
+
+# -----------------
+# Firefox CSS (DEFAULT)
+# -----------------
+FIREFOX_THEME_DIR="$HOME/.config/firefox/default/$THEME"
+FIREFOX_PROFILE="$HOME/.mozilla/firefox/default/chrome"
+[ -f "$FIREFOX_THEME_DIR/userChrome.css" ]   && ln -sf "$FIREFOX_THEME_DIR/userChrome.css"   "$FIREFOX_PROFILE/userChrome.css"
+[ -f "$FIREFOX_THEME_DIR/userContent.css" ] && ln -sf "$FIREFOX_THEME_DIR/userContent.css" "$FIREFOX_PROFILE/userContent.css"
+
+# -----------------
+# Firefox CSS (AI)
+# -----------------
+FIREFOX_AI_THEME_DIR="$HOME/.config/firefox/ai/$THEME"
+FIREFOX_AI_PROFILE="$HOME/.mozilla/firefox/ai/chrome"
+[ -f "$FIREFOX_AI_THEME_DIR/userChrome.css" ]   && ln -sf "$FIREFOX_AI_THEME_DIR/userChrome.css"   "$FIREFOX_AI_PROFILE/userChrome.css"
+[ -f "$FIREFOX_AI_THEME_DIR/userContent.css" ] && ln -sf "$FIREFOX_AI_THEME_DIR/userContent.css" "$FIREFOX_AI_PROFILE/userContent.css"
+
+# -----------------
+# Kitty
+# -----------------
+KITTY_CONF="$HOME/.config/kitty/kitty.conf"
+
+if [ "$THEME" = "ultradark" ]; then
+    sed -i 's|^include .*|include ~/.config/kitty/themes/ultradark.conf|' "$KITTY_CONF"
+elif [ "$THEME" = "catppuccin" ]; then
+    sed -i 's|^include .*|include ~/.config/kitty/themes/catppuccin.conf|' "$KITTY_CONF"
+elif [ "$THEME" = "transparent" ]; then
+    sed -i 's|^include .*|include ~/.config/kitty/themes/transparent.conf|' "$KITTY_CONF"
+fi
+
+# -----------------
+# Cava
+# -----------------
+CAVA_DIR="$HOME/.config/cava/themes/$THEME"
+if [ -d "$CAVA_DIR" ]; then
+    mkdir -p "$HOME/.config/cava"
+    ln -sf "$CAVA_DIR/config" "$HOME/.config/cava/config"
+fi
