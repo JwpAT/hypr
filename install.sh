@@ -89,8 +89,8 @@ unzip -o ~/.config/wallpapers/transparent.zip -d ~/.config/wallpapers/
 unzip -o ~/.config/wallpapers/catppuccin.zip -d ~/.config/wallpapers/
 unzip -o ~/.config/wallpapers/ultradark.zip -d ~/.config/wallpapers/
 
-echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+#echo 'export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"' >> ~/.bashrc
+#source ~/.bashrc
 
 chmod +x ~/.config/scripts/*.sh ~/.config/scripts/switch-theme ~/.local/bin/toggle_caffeine
 
