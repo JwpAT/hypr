@@ -51,3 +51,9 @@ ncspot
 swaync-client
 wl-clipboard
 eog
+tumbler
+ffmpegthumbnailer
+libgsf
+libopenraw
+freetype2
+poppler-glib
