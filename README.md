@@ -14,15 +14,13 @@
 * Hyprlock greeter
 
 ## *Photo gallery*
-### Themes:
-![Catppuccin](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/catppuccin.png)
-![Transparent](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/transparent.png)
-![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png)
+| Catppuccin Theme | Transparent Theme |
+|------------------|-------------------|
+![Catppuccin](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/catppuccin.png) | ![Transparent](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/transparent.png) |
 
-### New addition - swaync - catppuccin, transparent, ultradark - Added 2025-10-13
-| swaync |
-|--------|
-![swaync](https://github.com/JwpAT/hypr/blob/326c9c92529088e632695f2528807085f67a23d2/readme/swaync-themes.png) |
+| Ultradark Theme | Swaync |
+|-----------------|--------|
+![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) | ![swaync](https://github.com/JwpAT/hypr/blob/326c9c92529088e632695f2528807085f67a23d2/readme/swaync-themes.png) |
 
 ### Extras ;)
 <div align="center">
