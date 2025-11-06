@@ -22,6 +22,15 @@
 |-----------------|--------|
 ![Ultradark](https://github.com/JwpAT/hypr/blob/0b564e654e3c042671a784ec8cc1dd2ac3bbacb7/readme/ultradark.png) | ![swaync](https://github.com/JwpAT/hypr/blob/326c9c92529088e632695f2528807085f67a23d2/readme/swaync-themes.png) |
 
+| hyprlock |
+|----------|
+![Hyprlock1](https://github.com/JwpAT/hypr/blob/b0bf3b5a81a6444b957d9c1bb5b5be52c5ddf0ef/readme/hyprlock1.png) |
+
+### More hyprlock themes comeing soon:
+| Theme 2 | Theme 3 |
+|---------|---------|
+![Theme2](https://github.com/JwpAT/hypr/blob/b0bf3b5a81a6444b957d9c1bb5b5be52c5ddf0ef/readme/hyprlock2.png) | ![Theme3](https://github.com/JwpAT/hypr/blob/b0bf3b5a81a6444b957d9c1bb5b5be52c5ddf0ef/readme/hyprlock.png) |
+
 ### Extras ;)
 <div align="center">
    
