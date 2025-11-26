@@ -26,7 +26,7 @@
 |----------|
 ![Hyprlock1](https://github.com/JwpAT/hypr/blob/b0bf3b5a81a6444b957d9c1bb5b5be52c5ddf0ef/readme/hyprlock1.png) |
 
-### More hyprlock themes coming soon:
+### More hyprlock themes coming soon (hyprstar):
 | Theme 2 | Theme 3 |
 |---------|---------|
 ![Theme2](https://github.com/JwpAT/hypr/blob/b0bf3b5a81a6444b957d9c1bb5b5be52c5ddf0ef/readme/hyprlock2.png) | ![Theme3](https://github.com/JwpAT/hypr/blob/b0bf3b5a81a6444b957d9c1bb5b5be52c5ddf0ef/readme/hyprlock.png) |
