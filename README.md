@@ -1,4 +1,4 @@
-# *Jwp's Hypr Dots: Abandoning Soon, new [dotfiles](https://github.com/jwpat/hyprstar) in progrees*
+# *Jwp's Hypr Dots: Abandoned, new [dotfiles](https://github.com/jwpat/hyprstar) in progrees*
 <div align="center">
 
 ![Last Commit](https://img.shields.io/github/last-commit/JwpAT/hypr?style=for-the-badge&label=LAST%20COMMIT&logo=git&logoColor=white&labelColor=1f2430&color=8bd5f7)
